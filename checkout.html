@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Eyelix</title>
+    <meta name="description" content="Checkout page for Eyelix Eyewear.">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo/favicon.png" sizes="32x32">
+</head>
+
+<body>
+    <!-- HEADER (auto render by header.js) -->
+    <header id="header"></header>
+
+    <!-- CHECKOUT CONTENT -->
+    <main class="checkout-page">
+        <div class="checkout-layout">
+            <!-- LEFT SIDE: Billing Details -->
+            <!-- Billing Details Section -->
+            <section class="checkout-left">
+                <h2>Billing details</h2>
+                <form id="checkout-form">
+                <div class="form-group">
+                    <label for="full-name">Full name <span class="required">*</span></label>
+                    <input type="text" id="full-name" required placeholder="Type Full name">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone <span class="required">*</span></label>
+                        <input type="text" id="phone" required placeholder="Type your phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address <span class="required">*</span></label>
+                        <input type="email" id="email" required placeholder="Type your email">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="province">Province/City <span class="required">*</span></label>
+                        <input type="text" id="province" required placeholder="Enter your province/city">
+                    </div>
+                    <div class="form-group">
+                        <label for="ward">Ward/Commune <span class="required">*</span></label>
+                        <input type="text" id="ward" required placeholder="Enter your ward/commune">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Street address <span class="required">*</span></label>
+                    <input type="text" id="address" required placeholder="Ex: No. 20, 90 Alley">
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" id="subscribe-email">
+                        I would like to receive exclusive emails with discounts and product information
+                    </label>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" id="different-address">
+                        <strong>Ship to a different address?</strong>
+                    </label>
+                </div>
+
+                <div id="shipping-address" style="display: none;">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="recipient-full-name">Recipient full name <span class="required">*</span></label>
+                            <input type="text" id="recipient-full-name" placeholder="Enter recipient's full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-phone">Recipient phone (optional)</label>
+                            <input type="text" id="recipient-phone" placeholder="Enter recipient's phone">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="shipping-province">Province/City <span class="required">*</span></label>
+                            <input type="text" id="shipping-province" placeholder="Enter province/city">
+                        </div>
+                        <div class="form-group">
+                            <label for="shipping-ward">Ward/Commune <span class="required">*</span></label>
+                            <input type="text" id="shipping-ward" placeholder="Enter ward/commune">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="shipping-address">Street Address <span class="required">*</span></label>
+                        <input type="text" id="shipping-address" placeholder="Enter recipient's street address">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Order notes (optional)</label>
+                    <textarea id="notes" rows="4" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                </div>
+
+            </form>
+            </section>
+
+            <!-- RIGHT SIDE: Your Order -->
+            <aside class="checkout-right">
+                        <h2>Your order</h2>
+                    
+                    <div class="order-container">
+                        <div class="estimated-delivery">
+                            Estimated delivery: <strong>December 5, 2025 – December 9, 2025</strong>
+                        </div>
+
+                        <div class="order-header-row">
+                            <span>Product</span>
+                            <span>Subtotal</span>
+                        </div>
+
+                        <div id="order-items" class="order-items-list">
+                            </div>
+
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="order-subtotal">0 VND</span>
+                        </div>
+
+                        <div class="shipping-section">
+                            <h3>Shipping</h3>
+                            <label class="shipping-option">
+                                <input type="radio" name="shipping" value="express" checked>
+                                <span>Express Delivery: 20.000 VND</span>
+                            </label>
+                            <label class="shipping-option">
+                                <input type="radio" name="shipping" value="instant">
+                                <span>Instant Delivery: 50.000 VND</span>
+                            </label>
+                        </div>
+
+                        <div class="total-row">
+                            <span>Total</span>
+                            <span class="total-price-group">
+                                <span id="order-total">0 VND</span>
+                                <small>(includes VAT where applicable)</small>
+                            </span>
+                        </div>
+
+                        <div class="payment-box">
+                            <div class="payment-option">
+                                <div class="payment-top">
+                                    <label>
+                                        <input type="radio" name="payment" value="momo" checked>
+                                        <span>Momo QRCode</span>
+                                    </label>
+                                    <img src="images/logo/momo.png" alt="Momo" class="payment-logo">
+                                </div>
+                                <div class="payment-content">
+                                    Thanh toán qua ví Momo
+                                </div>
+                            </div>
+
+                            <div class="payment-option">
+                                <div class="payment-top">
+                                    <label>
+                                        <input type="radio" name="payment" value="vnpay">
+                                        <span>VNPay</span>
+                                    </label>
+                                    <img src="images/logo/vnpay.png" alt="VNPay" class="payment-logo">
+                                </div>
+                            </div>
+
+                            <div class="payment-option">
+                                <div class="payment-top">
+                                    <label>
+                                        <input type="radio" name="payment" value="credit">
+                                        <span>Credit / Debit Card</span>
+                                    </label>
+                                    <span class="card-icon">💳</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="privacy-policy">
+                            Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a href="#">privacy policy</a>.
+                        </p>
+
+                        <button id="place-order" class="btn-place-order">Place order</button>
+                    </div>
+                </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER (auto render by footer.js) -->
+    <footer id="footer"></footer>
+
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+
+</html>
