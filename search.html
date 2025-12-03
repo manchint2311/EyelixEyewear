@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - Eyelix</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header"></header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2>Search Overlay Demo</h2>
+        <p>Click the search icon above to see the search overlay in action!</p>
+        <button class="demo-btn" onclick="openSearch()">
+            <i class="fas fa-search"></i> Open Search
+        </button>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <button class="close-btn" onclick="closeSearch()">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <div class="search-overlay-content">
+            <!-- Search Input -->
+            <div class="search-input-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    id="searchInput"
+                    placeholder="Please enter the search term(s)"
+                    autocomplete="off"
+                >
+            </div>
+
+            <!-- Search Trends Section -->
+            <section class="search-section">
+                <div class="section-header">
+                    <h3>SEARCH TRENDS</h3>
+                </div>
+                <div class="trends-grid">
+                    <div class="trend-item">
+                        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=400&h=400&fit=crop" alt="Glitz 02" class="trend-image">
+                        <div class="trend-name">Glitz 02</div>
+                    </div>
+                    <div class="trend-item">
+                        <img src="https://images.unsplash.com/photo-1509695507497-903c140c43b0?w=400&h=400&fit=crop" alt="Takion R8" class="trend-image">
+                        <div class="trend-name">Takion R8</div>
+                    </div>
+                    <div class="trend-item">
+                        <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?w=400&h=400&fit=crop" alt="Limes 02" class="trend-image">
+                        <div class="trend-name">Limes 02(BR)</div>
+                    </div>
+                    <div class="trend-item">
+                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=400&fit=crop" alt="Gisele T1" class="trend-image">
+                        <div class="trend-name">Gisele T1</div>
+                    </div>
+                    <div class="trend-item">
+                        <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=400&h=400&fit=crop" alt="Duns 01" class="trend-image">
+                        <div class="trend-name">Duns 01</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recently Viewed Section -->
+            <section class="search-section">
+                <div class="section-header">
+                    <h3>RECENTLY VIEWED</h3>
+                    <button class="remove-btn" onclick="clearHistory()">REMOVE</button>
+                </div>
+                <div class="products-grid" id="recentlyViewed">
+                    <div class="product-item">
+                        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=400&h=400&fit=crop" alt="Nova Classic" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Nova Classic</div>
+                            <div class="product-price">450.000 VND</div>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://images.unsplash.com/photo-1509695507497-903c140c43b0?w=400&h=400&fit=crop" alt="Luna Frame" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Luna Frame</div>
+                            <div class="product-price">520.000 VND</div>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?w=400&h=400&fit=crop" alt="Solar Plus" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Solar Plus</div>
+                            <div class="product-price">680.000 VND</div>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=400&fit=crop" alt="Metro Style" class="product-image">
+                        <div class="product-info">
+                            <div class="product-name">Metro Style</div>
+                            <div class="product-price">390.000 VND</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/header.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

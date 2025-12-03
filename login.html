@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Eyelix Eyewear</title>
+    
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <!--  HEADER - Inject từ js/header.js -->
+    <header id="header"></header>
+
+    <!-- Main Content -->
+    <main class="login-main">
+        <div class="login-container">
+            <!-- Left Section - Brand Images -->
+            <div class="login-showcase">
+                <div class="showcase-wrapper">
+                    <div class="showcase-images">
+                        <div class="showcase-image active">
+                            <img src="images/blog/login-1.jpg" alt="Eyelix Style 1">
+                        </div>
+                        <div class="showcase-image">
+                            <img src="images/blog/login-2.jpg" alt="Eyelix Style 2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section - Login Form -->
+            <div class="login-content">
+                <!-- Main Login Box -->
+                <div class="login-box">
+                    <div class="login-logo">
+                    <img src="images/logo/eyelix-logo.png" alt="Eyelix" class="logo-image">
+                </div>
+
+    <form class="login-form" id="loginForm">
+        <!-- form content giữ nguyên -->
+
+                    <form class="login-form" id="loginForm">
+                        <div class="form-group">
+                            <input 
+                                type="text" 
+                                name="username" 
+                                id="username"
+                                class="form-input"
+                                placeholder="Phone number, username, or email"
+                                required
+                                aria-label="Phone number, username, or email"
+                                autocapitalize="off"
+                                autocorrect="off"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <input 
+                                type="password" 
+                                name="password" 
+                                id="password"
+                                class="form-input"
+                                placeholder="Password"
+                                required
+                                aria-label="Password"
+                            >
+                            <button type="button" class="toggle-password" aria-label="Show password">
+                                <span class="show-text">Show</span>
+                            </button>
+                        </div>
+
+                        <div class="form-message" id="formMessage" role="alert"></div>
+
+                        <button type="submit" class="btn-login" disabled>
+                            <span class="btn-text">Log in</span>
+                            <span class="btn-loader"></span>
+                        </button>
+
+                        <div class="form-divider">
+                            <span>OR</span>
+                        </div>
+
+                        <button type="button" class="btn-facebook">
+                            <svg class="facebook-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+                                <path d="M20,10.1c0-5.5-4.5-10-10-10S0,4.5,0,10.1c0,5,3.7,9.1,8.4,9.9v-7H5.9v-2.9h2.5V7.9C8.4,5.4,9.9,4,12.2,4c1.1,0,2.2,0.2,2.2,0.2v2.5h-1.3c-1.2,0-1.6,0.8-1.6,1.6v1.9h2.8L13.9,13h-2.3v7C16.3,19.2,20,15.1,20,10.1z"/>
+                            </svg>
+                            <span>Log in with Facebook</span>
+                        </button>
+
+                        <a href="forgot-password.html" class="forgot-password">
+                            Forgot password?
+                        </a>
+                    </form>
+                </div>
+
+                <!-- Sign Up Box -->
+                <div class="signup-box">
+                    <p>
+                        Don't have an account? 
+                        <a href="register.html" class="signup-link">Sign up</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER - Inject từ js/footer.js -->
+    <footer id="footer"></footer>
+
+    <!-- JavaScript -->
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

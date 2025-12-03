@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Eyelix Eyewear</title>
+    
+    <!-- Link CSS files -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    
+</head>
+<body>
+    <!-- HEADER PLACEHOLDER -->
+    <div id="header-placeholder"></div>
+
+    <!-- CART CONTENT -->
+    <div class="cart-container">
+        <!-- Rewards Banner -->
+        <div class="rewards-banner">
+            <span class="icon">⭐</span>
+            <p>Complete your order and earn 390,000 Eyelix points & rewards for a discount on a future purchase</p>
+        </div>
+
+        <!-- Cart Layout -->
+        <div class="cart-layout" id="cartLayout">
+            <!-- Cart Items -->
+            <div class="cart-items-section">
+                <table class="cart-table" id="cartTable">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="cartTableBody">
+                        <!-- Cart items will be loaded here -->
+                    </tbody>
+                </table>
+
+                <!-- Coupon Section -->
+                <div class="coupon-section">
+                    <input type="text" placeholder="Coupon code" id="couponInput">
+                    <button onclick="applyCoupon()">Apply coupon</button>
+                </div>
+                <button class="update-cart-btn" onclick="updateCart()">Update cart</button>
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="cart-summary">
+                <h2>Cart totals</h2>
+                
+                <div class="summary-row subtotal">
+                    <span>Subtotal</span>
+                    <span id="subtotalAmount">780.000 VND</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <div></div>
+                </div>
+
+                <div class="shipping-options">
+                    <div class="shipping-option">
+                        <input type="radio" name="shipping" id="express" value="20000" checked>
+                        <label for="express">Express Delivery: 20.000 VND</label>
+                    </div>
+                    <div class="shipping-option">
+                        <input type="radio" name="shipping" id="instant" value="50000">
+                        <label for="instant">Instant Delivery: 50.000 VND</label>
+                    </div>
+                    <a href="#" class="change-address">Change address</a>
+                </div>
+
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <div>
+                        <div id="totalAmount">800.000 VND</div>
+                        <div class="vat-info">(includes 57.778 VND VAT)</div>
+                    </div>
+                </div>
+
+                <button class="checkout-btn" onclick="proceedToCheckout()">Proceed to checkout</button>
+            </div>
+        </div>
+
+        <!-- Empty Cart (hidden by default) -->
+        <div class="empty-cart" id="emptyCart" style="display: none;">
+            <h2>Your cart is empty</h2>
+            <p>Add some products to get started!</p>
+            <a href="/products" class="continue-shopping">Continue Shopping</a>
+        </div>
+    </div>
+
+    <!-- FOOTER PLACEHOLDER -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load Header & Footer -->
+    <script src="common.js"></script>
+
+    <!-- Cart Logic -->
+    <script>
+        // Sample cart data (in real app, this would come from localStorage or backend)
+        let cartItems = [
+            {
+                id: 4194,
+                name: 'Dada',
+                image: 'https://via.placeholder.com/300x300?text=Dada',
+                price: 780000,
+                originalPrice: 800000,
+                quantity: 1
+            }
+        ];
+
+        // Format price
+        function formatPrice(price) {
+            return price.toLocaleString('vi-VN') + ' VND';
+        }
+
+        // Calculate VAT
+        function calculateVAT(amount) {
+            return Math.round(amount * 0.1 / 1.1);
+        }
+
+        // Render cart items
+        function renderCart() {
+            const cartBody = document.getElementById('cartTableBody');
+            const emptyCart = document.getElementById('emptyCart');
+            const cartLayout = document.getElementById('cartLayout');
+
+            if (cartItems.length === 0) {
+                cartLayout.style.display = 'none';
+                emptyCart.style.display = 'block';
+                return;
+            }
+
+            cartLayout.style.display = 'grid';
+            emptyCart.style.display = 'none';
+
+            cartBody.innerHTML = cartItems.map(item => `
+                <tr data-id="${item.id}">
+                    <td>
+                        <div class="product-cell">
+                            <div class="product-image">
+                                <img src="${item.image}" alt="${item.name}">
+                            </div>
+                            <div class="product-details">
+                                <h3>${item.name}</h3>
+                                <div>
+                                    ${item.originalPrice ? `<span class="original-price">${formatPrice(item.originalPrice)}</span>` : ''}
+                                    <span class="${item.originalPrice ? 'sale-price' : ''}">${formatPrice(item.price)}</span>
+                                </div>
+                                <div class="vat-note">VAT</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="quantity-control">
+                            <button onclick="updateQuantity(${item.id}, -1)">−</button>
+                            <input type="number" value="${item.quantity}" min="1" readonly>
+                            <button onclick="updateQuantity(${item.id}, 1)">+</button>
+                        </div>
+                    </td>
+                    <td>${formatPrice(item.price * item.quantity)}</td>
+                    <td>
+                        <button class="remove-btn" onclick="removeItem(${item.id})">🗑️</button>
+                    </td>
+                </tr>
+            `).join('');
+
+            updateSummary();
+        }
+
+        // Update quantity
+        function updateQuantity(itemId, change) {
+            const item = cartItems.find(i => i.id === itemId);
+            if (item) {
+                item.quantity = Math.max(1, item.quantity + change);
+                renderCart();
+            }
+        }
+
+        // Remove item
+        function removeItem(itemId) {
+            if (confirm('Are you sure you want to remove this item?')) {
+                cartItems = cartItems.filter(i => i.id !== itemId);
+                renderCart();
+            }
+        }
+
+        // Update summary
+        function updateSummary() {
+            const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const shippingCost = parseInt(document.querySelector('input[name="shipping"]:checked').value);
+            const total = subtotal + shippingCost;
+            const vat = calculateVAT(total);
+
+            document.getElementById('subtotalAmount').textContent = formatPrice(subtotal);
+            document.getElementById('totalAmount').textContent = formatPrice(total);
+            document.querySelector('.vat-info').textContent = `(includes ${formatPrice(vat)} VAT)`;
+        }
+
+        // Shipping change handler
+        document.addEventListener('change', (e) => {
+            if (e.target.name === 'shipping') {
+                updateSummary();
+            }
+        });
+
+        // Apply coupon
+        function applyCoupon() {
+            const code = document.getElementById('couponInput').value;
+            if (code) {
+                alert('Coupon functionality coming soon!');
+            } else {
+                alert('Please enter a coupon code');
+            }
+        }
+
+        // Update cart
+        function updateCart() {
+            alert('Cart updated!');
+        }
+
+        // Proceed to checkout
+        function proceedToCheckout() {
+            if (cartItems.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            window.location.href = '/checkout';
+        }
+
+        // Initial render
+        renderCart();
+    </script>
+</body>
+</html>

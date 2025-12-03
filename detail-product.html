@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kala - Eyelix Eyewear</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link CSS files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/detail-product.css">
+    
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="header"></header>
+
+    <!-- MAIN CONTENT -->
+    <main class="product-detail">
+        <div class="container">
+            <div class="product-wrapper">
+                <!-- Product Gallery -->
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img src="images/products/kala-black.png" alt="Kala Sunglasses" id="mainImage">
+                    </div>
+                    <div class="thumbnail-gallery">
+                        <div class="thumbnail active" onclick="changeImage('images/products/kala-black.png', this)">
+                            <img src="images/products/kala-black.png" alt="View 1">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage('images/products/kala-model.png', this)">
+                            <img src="images/products/kala-model.png" alt="View 2">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage('images/products/kala-detail.png', this)">
+                            <img src="images/products/kala-detail.png" alt="View 3">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage('images/products/kala-side.png', this)">
+                            <img src="images/products/kala-side.png" alt="View 4">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info-section">
+                    <h1 class="product-title">Kala</h1>
+                    
+                    <div class="product-price">650.000 VND</div>
+                    <div class="vat-label">VAT</div>
+
+                    <p class="product-description">
+                        Stand out from the crowd with Kala polarized sunglasses! Our sleek and stylish unisex frames are made from 95% recycled metal. Whether you're looking for a statement piece or something more subtle, Kala sunglasses have you covered. So put on your shades and get ready to shine!
+                    </p>
+
+                    <p class="published-date">Published on: December 15, 2021</p>
+
+                    <p style="font-size: 14px; color: #687279; margin-bottom: 30px;">
+                        Earn up to 325,000 Eyelix points.
+                    </p>
+
+                    <!-- Color Selection -->
+                    <div class="color-section">
+                        <label>Color</label>
+                        <div class="color-options">
+                            <div class="color-option color-black active" onclick="selectColor(this)" title="Black"></div>
+                            <div class="color-option color-tortoise" onclick="selectColor(this)" title="Tortoise"></div>
+                            <div class="color-option color-gold" onclick="selectColor(this)" title="Gold"></div>
+                            <div class="color-option color-rose" onclick="selectColor(this)" title="Rose"></div>
+                        </div>
+                    </div>
+
+                    <!-- Quantity & Add to Cart -->
+                    <div class="quantity-cart-section">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1" id="quantity">
+                            <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <!-- Shipping Information -->
+                    <div class="shipping-info">
+                        <h3>Shipping Information</h3>
+                        <table class="shipping-table">
+                            <thead>
+                                <tr>
+                                    <th>Zone</th>
+                                    <th>Shipping Method(s) & Cost</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Local (HCMC)</td>
+                                    <td>
+                                        Fast Shipping – 20.000 VND<br>
+                                        Instant Shipping – 45.000 VND (10% of product price)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Domestic</td>
+                                    <td>
+                                        Standard Shipping – 25.000 VND<br>
+                                        Fast Shipping – 30.000 VND
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Worldwide</td>
+                                    <td>International Shipping – 250.000 VND</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="product-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="openTab(event, 'description')">Description</button>
+                    <button class="tab-btn" onclick="openTab(event, 'additional')">Additional Information</button>
+                    <button class="tab-btn" onclick="openTab(event, 'reviews')">Reviews (0)</button>
+                </div>
+
+                <div id="description" class="tab-content active">
+                    <div class="description-content">
+                        <p>Stand out from the crowd with Kala polarized sunglasses! Our sleek and stylish unisex frames are made from 95% recycled metal. Whether you're looking for a statement piece or something more subtle, Kala sunglasses have you covered. So put on your shades and get ready to shine!</p>
+
+                        <h4>Design & Materials</h4>
+                        <p>Crafted from recycled metal, these frames are a testament to our commitment to the planet. We transform post-consumer waste into a durable, lightweight, and stylish material.</p>
+
+                        <h4>Clarity & Protection</h4>
+                        <p>Our high-performance lenses are equipped with 100% UV400 protection, shielding your eyes from harmful UVA and UVB rays. Enjoy crystal-clear vision with lenses that are designed to resist scratches and reduce glare, ensuring long-lasting clarity and comfort.</p>
+
+                        <h4>The Full Package</h4>
+                        <p>We've meticulously designed every detail to ensure the best fit and feel for all-day wear. Each pair arrives in packaging made from recycled materials, continuing our eco-friendly promise from product to delivery.</p>
+
+                        <p>Explore more in our <a href="/product-category/collections/fall-winter-2025" style="color: #e00d0d; text-decoration: underline;">FALL / WINTER 2025</a> Collection!</p>
+                    </div>
+                </div>
+
+                <div id="additional" class="tab-content">
+                    <div class="description-content">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 15px; font-weight: 600;">Material</td>
+                                <td style="padding: 15px; color: #666;">95% Recycled Metal</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 15px; font-weight: 600;">Lens Protection</td>
+                                <td style="padding: 15px; color: #666;">100% UV400</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 15px; font-weight: 600;">Frame Type</td>
+                                <td style="padding: 15px; color: #666;">Round</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 15px; font-weight: 600;">Gender</td>
+                                <td style="padding: 15px; color: #666;">Unisex</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="reviews" class="tab-content">
+                    <div class="description-content">
+                        <p style="text-align: center; padding: 40px 0; color: #999;">No reviews yet. Be the first to review this product!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-products">
+                <h2>Related products</h2>
+                <div class="related-grid">
+                    <a href="#" class="product-card">
+                        <div class="product-card-image">
+                            <img src="images/products/neos.png" alt="Neos">
+                        </div>
+                        <div class="product-card-title">Neos</div>
+                        <div class="product-card-price">660.000 VND</div>
+                    </a>
+
+                    <a href="#" class="product-card">
+                        <div class="product-card-image">
+                            <img src="images/products/obsidian.png" alt="Obsidian">
+                        </div>
+                        <div class="product-card-title">Obsidian</div>
+                        <div class="product-card-price">600.000 VND</div>
+                    </a>
+
+                    <a href="#" class="product-card">
+                        <div class="product-card-image">
+                            <img src="images/products/maison.png" alt="Maison">
+                        </div>
+                        <div class="product-card-title">Maison</div>
+                        <div class="product-card-price">777.000 VND</div>
+                    </a>
+
+                    <a href="#" class="product-card">
+                        <div class="product-card-image">
+                            <span class="sale-badge">SALE</span>
+                            <img src="images/products/dada.png" alt="Dada">
+                        </div>
+                        <div class="product-card-title">Dada</div>
+                        <div class="product-card-price">
+                            <del>800.000 VND</del> 780.000 VND
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+    <script>
+        // Change Main Image
+        function changeImage(src, element) {
+            document.getElementById('mainImage').src = src;
+            
+            // Update active thumbnail
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+
+        // Color Selection
+        function selectColor(element) {
+            document.querySelectorAll('.color-option').forEach(color => {
+                color.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+
+        // Quantity Controls
+        function increaseQuantity() {
+            const input = document.getElementById('quantity');
+            input.value = parseInt(input.value) + 1;
+        }
+
+        function decreaseQuantity() {
+            const input = document.getElementById('quantity');
+            if (parseInt(input.value) > 1) {
+                input.value = parseInt(input.value) - 1;
+            }
+        }
+
+        // Add to Cart
+        function addToCart() {
+            const quantity = document.getElementById('quantity').value;
+            alert(`Added ${quantity} Kala sunglasses to cart!`);
+        }
+
+        // Wishlist Toggle
+        function toggleWishlist(btn) {
+            const icon = btn.querySelector('i');
+            if (icon.classList.contains('far')) {
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+                btn.style.color = '#e00d0d';
+                btn.style.borderColor = '#e00d0d';
+            } else {
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+                btn.style.color = '#666';
+                btn.style.borderColor = '#ddd';
+            }
+        }
+
+        // Tab Switching
+        function openTab(evt, tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected tab and mark button as active
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+
+    <!-- Load Header & Footer -->
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+</html>

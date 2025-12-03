@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyelix - Carbon Negative Eyewear | Sustainable & Stylish Glasses</title>
+    <meta name="description" content="Discover Eyelix, the pioneer in carbon negative eyewear. Shop stylish & sustainable sunglasses and frames designed for the planet.">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo/favicon.png" sizes="32x32">
+</head>
+<body>
+    <!--  HEADER - Inject từ js/header.js -->
+    <header id="header"></header>
+
+    <!-- THÊM SEARCH OVERLAY Ở ĐÂY -->
+    <div class="search-overlay" id="search-overlay">
+        <button class="close-btn" onclick="closeSearch()">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <div class="search-overlay-content">
+            <!-- Search Input -->
+            <div class="search-input-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    id="searchInput"
+                    placeholder="Please enter the search term(s)"
+                    autocomplete="off"
+                >
+            </div>
+
+            <!-- Search Trends Section -->
+            <section class="search-section">
+                <div class="section-header">
+                    <h3>SEARCH TRENDS</h3>
+                </div>
+                <div class="trends-grid"></div>
+            </section>
+
+            <!-- Recently Viewed Section -->
+            <section class="search-section">
+                <div class="section-header">
+                    <h3>RECENTLY VIEWED</h3>
+                    <button class="remove-btn" onclick="clearHistory()">REMOVE</button>
+                </div>
+                <div class="products-grid" id="recentlyViewed">
+                    <p class="no-history">No history</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Promo Banner -->
+    <div class="promo-banner">
+        <div class="promo-slider">
+            <div class="promo-slide">15% off for first order with code WELCOME15</div>
+            <div class="promo-slide">Eyelix Green Deal - 20% off for every pair</div>
+            <div class="promo-slide">20.000 off all Fall/Winter 2025 items with code FALL20</div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="video/hero-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>Be Seen<br>Be Green</h1>
+            <a href="our-story.html" class="btn-primary">discover us</a>
+        </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="new-arrivals">
+        <div class="container">
+            <h2>New Arrival</h2>
+            
+            <div class="product-slider">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/products/maison.png" alt="Maison">
+                        <button class="wishlist-btn">♡</button>
+                    </div>
+                    <h3>Maison</h3>
+                    <p class="price">777.000 VND</p>
+                    <button class="btn-add-cart">Add to cart</button>
+                    <p class="sold-count">1 sold 🛍️</p>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/products/nuit.png" alt="Nuit">
+                        <button class="wishlist-btn">♡</button>
+                    </div>
+                    <h3>Nuit</h3>
+                    <p class="price">790.000 VND</p>
+                    <button class="btn-add-cart">Add to cart</button>
+                    <p class="sold-count">5 sold 🛍️</p>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="sale-badge">SALE</span>
+                        <img src="images/products/dada.png" alt="Dada">
+                        <button class="wishlist-btn">♡</button>
+                    </div>
+                    <h3>Dada</h3>
+                    <p class="price">
+                        <del>800.000 VND</del>
+                        <span class="sale-price">780.000 VND</span>
+                    </p>
+                    <button class="btn-add-cart">Add to cart</button>
+                    <p class="sold-count">2 sold 🛍️</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Highlight -->
+    <section class="collections-highlight">
+        <div class="collection-item">
+            <div class="collection-content">
+                <span class="collection-label">COLLECTION / NEW MATERIAL</span>
+                <h2>RECYCLED ALUMINIUM</h2>
+                <p>Meet the newest addition in our 2025 collection Recycled Aluminium. Lightweight, durable, and distinctively modern.</p>
+                <a href="recycled-aluminium.html" class="btn-primary">VIEW ALL</a>
+            </div>
+            <div class="collection-image">
+                <img src="images/collections/aluminium.webp" alt="Recycled Aluminium">
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Slider -->
+    <section class="collections-slider">
+        <div class="slider-header">
+            <h2>Collections</h2>
+        </div>
+        
+        <div class="collections-carousel">
+            <!-- Slide 1: Fall/Winter 2025 -->
+            <div class="collection-slide">
+                <div class="slide-background">
+                    <img src="images/collections/fall-winter-bg.webp" alt="Fall Winter 2025">
+                </div>
+                <div class="slide-content">
+                    <span class="slide-number">01</span>
+                    <h3>FALL/WINTER 2025</h3>
+                    <p>Step into crisp autumn days with our sustainable eyewear collection, featuring versatile optical frames with magnetic UV-protective clip-ons.</p>
+                    <a href="fall-winter-2025.html" class="btn-secondary">VIEW ALL</a>
+                </div>
+                <div class="slide-images">
+                    <img src="images/collections/fall-winter-1.webp" alt="Collection Image 1">
+                    <img src="images/collections/fall-winter-2.webp" alt="Collection Image 2">
+                </div>
+            </div>
+
+            <!-- Slide 2: Wonwoo's Choice -->
+            <div class="collection-slide">
+                <div class="slide-background">
+                    <img src="images/collections/wonwoo-bg.jpg" alt="Wonwoo Choice">
+                </div>
+                <div class="slide-content">
+                    <span class="slide-number">02</span>
+                    <h3>WONWOO'S CHOICE</h3>
+                    <p>Known for his quiet charisma and intellectual charm, our ambassador Wonwoo embodies a timeless sense of style.</p>
+                    <a href="wonwoo-choice.html" class="btn-secondary">VIEW ALL</a>
+                </div>
+                <div class="slide-images">
+                    <img src="images/collections/wonwoo-1.jpg" alt="Wonwoo 1">
+                    <img src="images/collections/wonwoo-2.jpg" alt="Wonwoo 2">
+                </div>
+            </div>
+
+            <!-- Slide 3: The Sun Code -->
+            <div class="collection-slide">
+                <div class="slide-background">
+                    <img src="images/collections/sun-code-bg.jpg" alt="The Sun Code">
+                </div>
+                <div class="slide-content">
+                    <span class="slide-number">03</span>
+                    <h3>THE SUN CODE</h3>
+                    <p>Bold, magnetic, and effortlessly cool – Mingyu's presence commands attention, and this collection captures that same unstoppable energy.</p>
+                    <a href="the-sun-code.html" class="btn-secondary">VIEW ALL</a>
+                </div>
+                <div class="slide-images">
+                    <img src="images/collections/sun-code-1.jpg" alt="Sun Code 1">
+                    <img src="images/collections/sun-code-2.png" alt="Sun Code 2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Gallery Section -->
+    <section class="instagram-fullwidth">
+        <div class="instagram-header">
+            <h2>YOU MAKE SUSTAINABILITY LOOK GOOD</h2>
+        </div>
+        <div class="instagram-carousel-wrapper">
+            <div class="instagram-carousel">
+                <!-- First set of images -->
+                <div class="instagram-item">
+                    <img src="images/instagram/img1.webp" alt="Instagram 1">
+                </div>
+                <div class="instagram-item">
+                    <img src="images/instagram/img2.webp" alt="Instagram 2">
+                </div>
+                <div class="instagram-item">
+                    <img src="images/instagram/img3.webp" alt="Instagram 3">
+                </div>
+                <div class="instagram-item">
+                    <img src="images/instagram/img4.webp" alt="Instagram 4">
+                </div>
+                <div class="instagram-item">
+                    <img src="images/instagram/img5.webp" alt="Instagram 5">
+                </div>
+                <div class="instagram-item">
+                    <img src="images/instagram/img6.webp" alt="Instagram 6">
+                </div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="instagram-item">
+                    <img src="images/instagram/img1.webp" alt="Instagram 1">
+                </div>
+                <div class="instagram-item">
+                    <img src="images/instagram/img2.webp" alt="Instagram 2">
+                </div>
+                <div class="instagram-item">
+                    <img src="images/instagram/img3.webp" alt="Instagram 3">
+                </div>
+                <div class="instagram-item">
+                    <img src="images/instagram/img4.webp" alt="Instagram 4">
+                </div>
+                <div class="instagram-item">
+                    <img src="images/instagram/img5.webp" alt="Instagram 5">
+                </div>
+                <div class="instagram-item">
+                    <img src="images/instagram/img6.webp" alt="Instagram 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carbon Negative Section -->
+    <section class="carbon-negative">
+        <div class="container">
+            <h2>Carbon Footprint Report</h2>
+            <p>Our mission has led Eyelix Eyewear to become one of the very first carbon negative eyewear brands in Vietnam.</p>
+            <a href="our-mission.html" class="btn-primary">find out more</a>
+        </div>
+    </section>
+
+    <!-- Info Boxes -->
+    <section class="info-boxes">
+        <div class="info-box">
+            <h3>CONTACT US</h3>
+            <a href="contact.html" class="btn-secondary">find out more</a>
+        </div>
+        <div class="info-box">
+            <h3>TERMS AND CONDITIONS</h3>
+            <a href="terms.html" class="btn-secondary">find out more</a>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <h2>Latest Posts</h2>
+            
+            <div class="blog-slider">
+                <!-- Blog Post 1 -->
+                <article class="blog-card">
+                    <img src="images/blog/green-deal.jpg" alt="Eyelix Green Deal">
+                    <div class="blog-content">
+                        <span class="blog-category">Events</span>
+                        <span class="blog-date">October 01, 2025</span>
+                        <h4>Eyelix Green Deal – Embrace Sustainability in Style</h4>
+                        <a href="blog-post-1.html" class="btn-read-more">READ MORE</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card">
+                    <img src="images/blog/wonwoo-style.jpg" alt="Wonwoo Style">
+                    <div class="blog-content">
+                        <span class="blog-category">Blogs</span>
+                        <span class="blog-date">October 14, 2025</span>
+                        <h4>WONWOO'S CHOICE: When Style Meets Sustainability</h4>
+                        <a href="blog-post-2.html" class="btn-read-more">READ MORE</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card">
+                    <img src="images/blog/sun-code.jpg" alt="The Sun Code">
+                    <div class="blog-content">
+                        <span class="blog-category">Blogs</span>
+                        <span class="blog-date">October 14, 2025</span>
+                        <h4>THE SUN CODE: A Collaboration with SEVENTEEN's MINGYU</h4>
+                        <a href="blog-post-3.html" class="btn-read-more">READ MORE</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Newsletter Updates</h2>
+            <p>Subscribe to receive emails on new product arrivals & special offers</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Email address" required>
+                <button type="submit" class="btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER - Inject từ js/footer.js -->
+    <footer id="footer"></footer>
+
+    <!-- Popup Modal -->
+    <div id="popup-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="popup-content">
+                <img src="images/promo/green-deal-popup.jpg" alt="Eyelix Green Deal">
+                <div class="popup-text">
+                    <span class="discount-badge">20%</span>
+                    <h2>Eyelix Green Deal</h2>
+                    <p>Enjoy 20% off every pair<br>October 25 - November 5</p>
+                    <a href="green-deal.html" class="btn-primary">View More</a>
+                    <button class="btn-dismiss">No, thanks!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files (Header & Footer must be loaded FIRST) -->
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/search.js"></script>
+
+</body>
+</html>
