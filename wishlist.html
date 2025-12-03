@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist - Eyelix</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/wishlist.css">
+    <!-- Font Awesome for icons (Share icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER (auto render by header.js) -->
+    <header id="header"></header>
+
+    <!-- WISHLIST CONTENT -->
+    <main class="wishlist-page">
+        <h1>Wishlist</h1>
+
+        <h3>Wishlist</h3>
+
+        <!-- Wishlist Table -->
+        <div class="wishlist-container">
+            <table class="wishlist-table">
+                <thead>
+                    <tr>
+                        <th style="width: 40px;"><!-- Checkbox --></th>
+                        <th style="width: 40px;"><!-- Remove --></th>
+                        <th style="width: 80px;"><!-- Image --></th>
+                        <th>Product Name</th>
+                        <th>Unit Price</th>
+                        <th>Date Added</th>
+                        <th>Stock Status</th>
+                        <th></th> 
+                    </tr>
+                </thead>
+                <tbody id="wishlist-items">
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Bottom Actions Bar -->
+        <div class="wishlist-footer">
+            <div class="footer-left">
+                <select id="action-select" class="action-dropdown">
+                    <option value="">Actions</option>
+                    <option value="add-cart">Add to Cart</option>
+                    <option value="remove">Remove</option>
+                </select>
+                <button id="apply-action" class="btn-red">Apply Action</button>
+            </div>
+
+            <div class="footer-right">
+                <button id="add-selected-to-cart" class="btn-red">Add Selected to Cart</button>
+                <button id="add-all-to-cart" class="btn-red">Add All to Cart</button>
+            </div>
+        </div>
+
+        <!-- Social Share -->
+        <div class="wishlist-share">
+            <span>Share on</span>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fas fa-link"></i></a> 
+            <a href="#"><i class="far fa-envelope"></i></a>
+        </div>
+    </main>
+
+    <!-- FOOTER (auto render by footer.js) -->
+    <footer id="footer"></footer>
+
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/wishlist.js"></script>
+</body>
+</html>
