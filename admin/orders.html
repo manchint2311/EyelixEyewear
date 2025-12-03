@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eyelix Admin - Orders</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="brand"><h2>EYE<span>LIX</span></h2></div>
+        <ul class="side-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="products.html"><i class="fas fa-glasses"></i> Products</a></li>
+            <li><a href="orders.html" class="active"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+            <li><a href="customers.html"><i class="fas fa-users"></i> Customers</a></li>
+            <li><a href="../index.html"><i class="fas fa-sign-out-alt"></i> Back to Site</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h2>Orders Management</h2>
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="search" id="searchOrder" placeholder="Search Order ID or Customer..." onkeyup="filterOrders()">
+            </div>
+        </header>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="filters">
+                    <select id="filterStatus" onchange="filterOrders()">
+                        <option value="All">All Status</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Processing">Processing</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                    <input type="date">
+                </div>
+            </div>
+            <div class="card-body">
+                <table>
+                    <thead>
+                        <tr><td>ID</td><td>Customer</td><td>Date</td><td>Status</td><td>Total</td><td>Actions</td></tr>
+                    </thead>
+                    <tbody id="orderTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('orderModal')">&times;</span>
+            <div class="modal-header"><h2>Order Details <span id="ordId"></span></h2></div>
+            
+            <div class="order-info">
+                <div>Customer: <strong id="ordCustomer"></strong></div>
+                <div>Date: <strong id="ordDate"></strong></div>
+                <div>Address: <strong id="ordAddress"></strong></div>
+                <div>Payment: <strong id="ordPayment"></strong></div>
+            </div>
+
+            <table class="mini-table" style="width: 100%; border: 1px solid #eee; margin-bottom: 20px;">
+                <thead style="background: #f8fafc;"><tr><th>Product</th><th>Qty</th><th>Price</th><th>Total</th></tr></thead>
+                <tbody id="ordItems"></tbody>
+            </table>
+
+            <div class="order-total">Total: <span id="ordTotal"></span></div>
+
+            <div class="form-group" style="margin-top: 20px; background: #f1f5f9; padding: 15px; border-radius: 5px;">
+                <label>Change Status:</label>
+                <div style="display: flex; gap: 10px;">
+                    <select id="ordStatusSelect">
+                        <option value="Pending">Pending</option>
+                        <option value="Processing">Processing</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Cancelled">Cancelled</option>
+                    </select>
+                    <button class="btn-main" id="btnUpdateStatus">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

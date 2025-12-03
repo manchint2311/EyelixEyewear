@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eyelix Admin - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="brand"><h2>EYE<span>LIX</span></h2></div>
+        <ul class="side-menu">
+            <li><a href="index.html" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="products.html"><i class="fas fa-glasses"></i> Products</a></li>
+            <li><a href="orders.html"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+            <li><a href="customers.html"><i class="fas fa-users"></i> Customers</a></li>
+            <li><a href="../index.html"><i class="fas fa-sign-out-alt"></i> Back to Site</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h2>Dashboard</h2>
+            <div class="header-right">
+                <div class="notification">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">0</span>
+                    <div class="notif-dropdown">
+                        </div>
+                </div>
+                <div class="user-wrapper">
+                    <img src="../images/logo/eyelix-logo.png" alt="Admin" width="40px">
+                </div>
+            </div>
+        </header>
+
+        <div class="filters" style="margin-bottom: 20px;">
+            <select><option>This Week</option><option>This Month</option></select>
+        </div>
+
+        <div class="cards">
+            <div class="card-single">
+                <div><h1>2,640,000đ</h1><span>Total Sales</span></div>
+                <div><i class="fas fa-dollar-sign"></i></div>
+            </div>
+            <div class="card-single">
+                <div><h1>2,361,110đ</h1><span>Net Sales</span></div>
+                <div><i class="fas fa-wallet"></i></div>
+            </div>
+            <div class="card-single">
+                <div><h1>5</h1><span>Orders</span></div>
+                <div><i class="fas fa-shopping-bag"></i></div>
+            </div>
+            <div class="card-single">
+                <div><h1>19</h1><span>Products Sold</span></div>
+                <div><i class="fas fa-box-open"></i></div>
+            </div>
+        </div>
+
+        <div class="recent-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px;">
+            <div class="card">
+                <div class="card-header"><h3>Revenue Chart</h3></div>
+                <div class="card-body"><canvas id="revenueChart"></canvas></div>
+            </div>
+            <div class="card">
+                <div class="card-header"><h3>Top Products</h3></div>
+                <div class="card-body">
+                    <table>
+                        <thead><tr><td>Product</td><td>Sold</td></tr></thead>
+                        <tbody>
+                            <tr><td>Andes</td><td>14</td></tr>
+                            <tr><td>Mistral</td><td>5</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
