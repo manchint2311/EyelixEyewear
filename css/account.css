@@ -55,9 +55,9 @@
         }
 
         .sidebar-item.active {
-            background-color: #e30613;
+            background-color: #F08438;
             color: white;
-            border-left-color: #a00000;
+            border-left-color: #f36b0a;
         }
 
         .sidebar-item svg {
@@ -110,7 +110,7 @@
         }
 
         .order-number {
-            color: #e30613;
+            color: #f36b0a;
             font-weight: 600;
         }
 
@@ -135,7 +135,7 @@
         .bank-logo {
             width: 45px;
             height: 45px;
-            background-color: #d5007f;
+            background-color: #ffffff;
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -147,7 +147,7 @@
         }
 
         .view-button {
-            background-color: #20e306;
+            background-color: #0DDB00;
             color: white;
             padding: 10px 32px;
             border: none;
@@ -159,11 +159,9 @@
         }
 
         .view-button:hover {
-            background-color: #c00511;
+            background-color: #f36b0a;
             transform: translateY(-1px);
         }
-
-        /* Profile & Account Details Sections */
         .section-content {
             display: none;
         }
@@ -195,11 +193,11 @@
 
         .form-group input:focus {
             outline: none;
-            border-color: #e30613;
+            border-color: #f36b0a;
         }
 
         .save-button {
-            background-color: #e30613;
+            background-color: #f36b0a;
             color: white;
             padding: 12px 40px;
             border: none;
@@ -211,11 +209,11 @@
         }
 
         .save-button:hover {
-            background-color: #c00511;
+            background-color: #fda363;
         }
 
         .rewards-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0DDB00 0%, #F08438 100%);
             padding: 30px;
             border-radius: 12px;
             color: white;
@@ -241,4 +239,13 @@
             .orders-table td {
                 padding: 12px 8px;
             }
+.bank-logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain; 
+}
+.view-button:hover {
+    background-color: #0DDB00; 
+    transform: translateY(-1px);
+}
         }
