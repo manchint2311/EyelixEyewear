@@ -7,6 +7,7 @@
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prosto+One&display=swap" rel="stylesheet">
     
     <!-- Link CSS files -->
     <link rel="stylesheet" href="css/main.css">
@@ -26,26 +27,34 @@
                 <!-- Product Gallery -->
                 <div class="product-gallery">
                     <div class="main-image">
-                        <img src="images/products/kala-black.png" alt="Kala Sunglasses" id="mainImage">
+                        <img src="images/products/kala-black.jpg" alt="Kala Sunglasses" id="mainImage">
                     </div>
                     <div class="thumbnail-gallery">
-                        <div class="thumbnail active" onclick="changeImage('images/products/kala-black.png', this)">
-                            <img src="images/products/kala-black.png" alt="View 1">
+                        <div class="thumbnail active" onclick="changeImage('images/products/kala-black.jpg', this)">
+                            <img src="images/products/kala-black.jpg" alt="View 1">
                         </div>
-                        <div class="thumbnail" onclick="changeImage('images/products/kala-model.png', this)">
-                            <img src="images/products/kala-model.png" alt="View 2">
+                        <div class="thumbnail" onclick="changeImage('images/products/kala-side.jpg', this)">
+                            <img src="images/products/kala-side.jpg" alt="View 2">
                         </div>
-                        <div class="thumbnail" onclick="changeImage('images/products/kala-detail.png', this)">
-                            <img src="images/products/kala-detail.png" alt="View 3">
-                        </div>
-                        <div class="thumbnail" onclick="changeImage('images/products/kala-side.png', this)">
-                            <img src="images/products/kala-side.png" alt="View 4">
+                        <div class="thumbnail" onclick="changeImage('images/products/kala-model.jpg', this)">
+                            <img src="images/products/kala-model.jpg" alt="View 3">
                         </div>
                     </div>
                 </div>
 
                 <!-- Product Info -->
-                <div class="product-info-section">
+                 <div class="product-info-section">
+                    <div class="product-meta">
+                        <p class="category-info">
+                            <span class="meta-label">Categories:</span>
+                            <span class="meta-value">NEW IN, SUNGLASSES</span>
+                        </p>
+                        <p class="sku-info">
+                            <span class="meta-label">SKU:</span>
+                            <span class="meta-value">OPT-001</span>
+                        </p>
+                    </div>
+
                     <h1 class="product-title">Kala</h1>
                     
                     <div class="product-price">650.000 VND</div>
@@ -53,23 +62,21 @@
 
                     <p class="product-description">
                         Stand out from the crowd with Kala polarized sunglasses! Our sleek and stylish unisex frames are made from 95% recycled metal. Whether you're looking for a statement piece or something more subtle, Kala sunglasses have you covered. So put on your shades and get ready to shine!
-                    </p>
-
-                    <p class="published-date">Published on: December 15, 2021</p>
-
-                    <p style="font-size: 14px; color: #687279; margin-bottom: 30px;">
-                        Earn up to 325,000 Eyelix points.
-                    </p>
-
                     <!-- Color Selection -->
                     <div class="color-section">
                         <label>Color</label>
                         <div class="color-options">
-                            <div class="color-option color-black active" onclick="selectColor(this)" title="Black"></div>
-                            <div class="color-option color-tortoise" onclick="selectColor(this)" title="Tortoise"></div>
-                            <div class="color-option color-gold" onclick="selectColor(this)" title="Gold"></div>
-                            <div class="color-option color-rose" onclick="selectColor(this)" title="Rose"></div>
-                        </div>
+                    <div class="color-option color-black active" 
+                        onclick="selectColor(this, 'images/products/kala-black.jpg')" 
+                        title="Black" data-image-src="images/products/kala-black.jpg"></div>
+                    <div class="color-option color-gold" 
+                        onclick="selectColor(this, 'images/products/kala-gold.jpg')" 
+                        title="Gold" data-image-src="images/products/kala-gold.jpg"></div>
+                    <div class="color-option color-rose" 
+                        onclick="selectColor(this, 'images/products/kala-rose.jpg')" 
+                        title="Rose" data-image-src="images/products/kala-rose.jpg"></div>
+                </div>
+
                     </div>
 
                     <!-- Quantity & Add to Cart -->
@@ -84,6 +91,11 @@
                             <i class="far fa-heart"></i>
                         </button>
                     </div>
+                    
+                    <p class="add-to-wishlist-link">
+                        <i class="far fa-heart"></i>
+                        <a href="#" onclick="event.preventDefault(); toggleWishlist(document.querySelector('.wishlist-btn'));">Add to Wishlist</a>
+                    </p>
 
                     <!-- Shipping Information -->
                     <div class="shipping-info">
@@ -141,7 +153,7 @@
                         <h4>The Full Package</h4>
                         <p>We've meticulously designed every detail to ensure the best fit and feel for all-day wear. Each pair arrives in packaging made from recycled materials, continuing our eco-friendly promise from product to delivery.</p>
 
-                        <p>Explore more in our <a href="/product-category/collections/fall-winter-2025" style="color: #e00d0d; text-decoration: underline;">FALL / WINTER 2025</a> Collection!</p>
+                        <p>Explore more in our <a href="/product-category/collections/fall-winter-2025" style="color: #666; text-decoration: underline;">FALL / WINTER 2025</a> Collection!</p>
                     </div>
                 </div>
 
@@ -177,24 +189,8 @@
 
             <!-- Related Products -->
             <div class="related-products">
-                <h2>Related products</h2>
+                <h2>Related Products</h2>
                 <div class="related-grid">
-                    <a href="#" class="product-card">
-                        <div class="product-card-image">
-                            <img src="images/products/neos.png" alt="Neos">
-                        </div>
-                        <div class="product-card-title">Neos</div>
-                        <div class="product-card-price">660.000 VND</div>
-                    </a>
-
-                    <a href="#" class="product-card">
-                        <div class="product-card-image">
-                            <img src="images/products/obsidian.png" alt="Obsidian">
-                        </div>
-                        <div class="product-card-title">Obsidian</div>
-                        <div class="product-card-price">600.000 VND</div>
-                    </a>
-
                     <a href="#" class="product-card">
                         <div class="product-card-image">
                             <img src="images/products/maison.png" alt="Maison">
@@ -299,5 +295,6 @@
     <!-- Load Header & Footer -->
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
+    <script src="js/detail-product.js"></script>
 </body>
 </html>
