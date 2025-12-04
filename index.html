@@ -6,17 +6,21 @@
     <title>Eyelix - Carbon Negative Eyewear | Sustainable & Stylish Glasses</title>
     <meta name="description" content="Discover Eyelix, the pioneer in carbon negative eyewear. Shop stylish & sustainable sunglasses and frames designed for the planet.">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prosto+One&display=swap" rel="stylesheet">
+    
     <!-- CSS Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/search.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Favicon -->
     <link rel="icon" href="images/logo/favicon.png" sizes="32x32">
-</head>
 <body>
     <!--  HEADER - Inject từ js/header.js -->
     <header id="header"></header>
@@ -96,7 +100,7 @@
                     <h3>Maison</h3>
                     <p class="price">777.000 VND</p>
                     <button class="btn-add-cart">Add to cart</button>
-                    <p class="sold-count">1 sold 🛍️</p>
+                    <p class="sold-count">1 sold</p>
                 </div>
 
                 <!-- Product 2 -->
@@ -108,7 +112,7 @@
                     <h3>Nuit</h3>
                     <p class="price">790.000 VND</p>
                     <button class="btn-add-cart">Add to cart</button>
-                    <p class="sold-count">5 sold 🛍️</p>
+                    <p class="sold-count">5 sold</p>
                 </div>
 
                 <!-- Product 3 -->
@@ -124,19 +128,19 @@
                         <span class="sale-price">780.000 VND</span>
                     </p>
                     <button class="btn-add-cart">Add to cart</button>
-                    <p class="sold-count">2 sold 🛍️</p>
+                    <p class="sold-count">2 sold</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Collections Highlight -->
+    <!-- MATERIAL -->
     <section class="collections-highlight">
         <div class="collection-item">
             <div class="collection-content">
                 <span class="collection-label">COLLECTION / NEW MATERIAL</span>
                 <h2>RECYCLED ALUMINIUM</h2>
-                <p>Meet the newest addition in our 2025 collection Recycled Aluminium. Lightweight, durable, and distinctively modern.</p>
+                <p>Meet the newest addition in our 2025 collection Recycled Aluminium. Lightweight, durable, and distinctively modern, this new direction allows for bold, yet clean silhouettes, without compromising on comfort.</p>
                 <a href="recycled-aluminium.html" class="btn-primary">VIEW ALL</a>
             </div>
             <div class="collection-image">
@@ -147,7 +151,7 @@
 
     <!-- Collections Slider -->
     <section class="collections-slider">
-        <div class="slider-header">
+        <div class="container">
             <h2>Collections</h2>
         </div>
         
@@ -158,7 +162,6 @@
                     <img src="images/collections/fall-winter-bg.webp" alt="Fall Winter 2025">
                 </div>
                 <div class="slide-content">
-                    <span class="slide-number">01</span>
                     <h3>FALL/WINTER 2025</h3>
                     <p>Step into crisp autumn days with our sustainable eyewear collection, featuring versatile optical frames with magnetic UV-protective clip-ons.</p>
                     <a href="fall-winter-2025.html" class="btn-secondary">VIEW ALL</a>
@@ -175,7 +178,6 @@
                     <img src="images/collections/wonwoo-bg.jpg" alt="Wonwoo Choice">
                 </div>
                 <div class="slide-content">
-                    <span class="slide-number">02</span>
                     <h3>WONWOO'S CHOICE</h3>
                     <p>Known for his quiet charisma and intellectual charm, our ambassador Wonwoo embodies a timeless sense of style.</p>
                     <a href="wonwoo-choice.html" class="btn-secondary">VIEW ALL</a>
@@ -192,7 +194,6 @@
                     <img src="images/collections/sun-code-bg.jpg" alt="The Sun Code">
                 </div>
                 <div class="slide-content">
-                    <span class="slide-number">03</span>
                     <h3>THE SUN CODE</h3>
                     <p>Bold, magnetic, and effortlessly cool – Mingyu's presence commands attention, and this collection captures that same unstoppable energy.</p>
                     <a href="the-sun-code.html" class="btn-secondary">VIEW ALL</a>
@@ -255,21 +256,21 @@
     </section>
 
     <!-- Carbon Negative Section -->
-    <section class="carbon-negative">
+    <section class="carbon-negative" style="background-image: url('images/blog/carbon-bg.jpg');">
         <div class="container">
             <h2>Carbon Footprint Report</h2>
             <p>Our mission has led Eyelix Eyewear to become one of the very first carbon negative eyewear brands in Vietnam.</p>
-            <a href="our-mission.html" class="btn-primary">find out more</a>
+            <a href="our-mission.html" class="btn-secondary">find out more</a>
         </div>
     </section>
 
     <!-- Info Boxes -->
     <section class="info-boxes">
-        <div class="info-box">
-            <h3>CONTACT US</h3>
+        <div class="info-box" style="background-image: url('images/blog/contact-bg.jpg');">
+        <h3>CONTACT US</h3>
             <a href="contact.html" class="btn-secondary">find out more</a>
         </div>
-        <div class="info-box">
+        <div class="info-box" style="background-image: url('images/blog/terms-bg.jpg');">
             <h3>TERMS AND CONDITIONS</h3>
             <a href="terms.html" class="btn-secondary">find out more</a>
         </div>
@@ -287,7 +288,7 @@
                     <div class="blog-content">
                         <span class="blog-category">Events</span>
                         <span class="blog-date">October 01, 2025</span>
-                        <h4>Eyelix Green Deal – Embrace Sustainability in Style</h4>
+                        <h4>Eyelix Green Deal - Embrace Sustainability in Style</h4>
                         <a href="blog-post-1.html" class="btn-read-more">READ MORE</a>
                     </div>
                 </article>
