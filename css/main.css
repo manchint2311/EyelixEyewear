@@ -8,22 +8,22 @@
 }
 
 :root {
-    --primary-color: #1ec23a;
-    --primary-dark: #e00d0d;
-    --secondary-color: #000000;
+    --primary-color: #0ddb00;
+    --primary-dark: #f08438;
+    --secondary-color: #0a0a0b;
     --text-color: #687279;
-    --text-dark: #111518;
+    --text-dark: #0a0a0b;
     --text-light: #687279;
     --bg-color: #ffffff;
     --bg-light: #f5f5f5;
-    --light-gray: #f5f5f5;
+    --light-gray: #e9ebec;
     --dark-gray: #333;
     --border-color: #e0e0e0;
     --transition: all 0.3s ease;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
@@ -58,11 +58,11 @@ button {
 ======================================== */
 .btn-primary {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 8px 20px;
     background-color: #000000;
     color: white;
-    border-radius: 3px;
-    font-size: 14px;
+    border-radius: 10px;
+    font-size: 15px;
     font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -76,12 +76,12 @@ button {
 
 .btn-secondary {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 8px 20px;
     background-color: transparent;
-    color: var(--secondary-color);
-    border: 1px solid var(--secondary-color);
-    border-radius: 3px;
-    font-size: 14px;
+    color: var(--bg-color);
+    border: 3px solid var(--bg-color);
+    border-radius: 10px;
+    font-size: 16px;
     font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -89,6 +89,7 @@ button {
 }
 
 .btn-secondary:hover {
+    border: 3px solid transparent;
     background-color: var(--secondary-color);
     color: white;
 }
@@ -96,59 +97,37 @@ button {
 .btn-add-cart {
     width: 100%;
     padding: 10px;
-    background-color: var(--secondary-color);
+    background-color: var(--dark-gray);
     color: white;
     border-radius: 3px;
-    font-size: 14px;
+    font-size: 15px;
     transition: var(--transition);
 }
 
 .btn-add-cart:hover {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
 }
 
 /* ========================================
    CUSTOM HERO BUTTON STYLE
 ======================================== */
-.btn-hero-green {
-    display: inline-block;
-    padding: 15px 35px;
-    background-color: #4CAF50; /* Màu xanh lá đậm cho nút */
-    color: white;
-    border-radius: 5px; /* Thêm bo góc nhẹ */
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-}
-
-.btn-hero-green:hover {
-    background-color: #388E3C; /* Màu xanh lá đậm hơn khi hover */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 70, 0, 0.3);
-}
-
-/* Đảm bảo nút trong hero có style này */
+/* Ghi đè style của .btn-primary nếu bạn dùng nó */
 .hero-content .btn-primary {
-    /* Ghi đè style của .btn-primary nếu bạn dùng nó */
-    background-color: #4CAF50;
-    font-weight: 700;
-    border-radius: 5px;
-    padding: 15px 35px;
-}
-
-.hero-content .btn-primary:hover {
-    background-color: #388E3C;
+    background-color: #0ddb00;
+    color: #000000;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 20px;
+    padding: 10px 25px;
 }
 
 /* ========================================
    PROMO BANNER
 ======================================== */
 .promo-banner {
-    background-color: var(--light-gray);
+    background-color: var(--bg-color);
     text-align: center;
-    padding: 10px 0;
+    padding: 5px 0;
     font-weight: 500;
     font-size: 15px;
     letter-spacing: 0.3px;
@@ -179,7 +158,7 @@ button {
     position: relative;
     height: 700px; /* Tăng chiều cao để nội dung nổi bật hơn */
     display: flex;
-    align-items: flex-end; /* Căn nội dung xuống đáy */
+    align-items: end; /* Căn nội dung xuống đáy */
     justify-content: flex-start; /* Căn nội dung sang trái */
     overflow: hidden;
     background-color: #000;
@@ -198,25 +177,25 @@ button {
 }
 
 .hero-content {
-    position: relative;
+    position: absolute; /* Đặt vị trí tuyệt đối so với .hero */
+    bottom: 0; /* Đặt ở dưới cùng */
+    left: 0; /* Đặt ở bên trái cùng */
     z-index: 1;
-    text-align: left; /* Căn chữ sang trái */
+    text-align: left;
     color: white;
-    padding-left: 100px; /* Thêm khoảng đệm cho nội dung (như trong hình) */
-    padding-bottom: 80px; /* Thêm khoảng đệm dưới */
-    max-width: 1200px; /* Để nội dung không quá rộng */
-    margin: 0 auto;
-    width: 100%;
+    padding-left: 100px; /* Khoảng đệm từ lề trái */
+    padding-bottom: 80px; /* Khoảng đệm từ lề dưới */
+    max-width: 100%; /* Đảm bảo chiếm đủ chiều rộng */
 }
 
 .hero h1 {
-    font-size: 100px; /* Tăng kích thước chữ cho nổi bật hơn */
-    font-weight: 900; /* Dùng font dày hơn cho chữ "Be Seen Be Green" */
-    line-height: 1; /* Giảm line-height */
-    margin-bottom: 25px; /* Giảm khoảng cách giữa chữ và nút */
-    animation: none; /* Bỏ animation nếu cần */
-    text-transform: uppercase; /* Chữ in hoa */
+    font-family: 'Prosto One', sans-serif; /* Font Prosto One */
+    font-size: 80px; /* Kích thước chữ */
+    font-weight: 600; /* Font weight của Prosto One */
+    line-height: 1; /* Line height */
+    margin-bottom: 10px; /* Khoảng cách giữa chữ và nút */
 }
+    
 
 /* Thêm media query để chữ không quá lớn trên mobile */
 @media (max-width: 1024px) {
@@ -224,8 +203,8 @@ button {
         height: 500px;
     }
     .hero-content {
-        padding-left: 20px;
-        padding-bottom: 40px;
+        padding-left: 20px; /* Giảm padding trên mobile */
+        padding-bottom: 20px; /* Giảm padding dưới trên mobile */
     }
     .hero h1 {
         font-size: 60px;
@@ -245,8 +224,8 @@ section {
 }
 
 section h2 {
-    font-size: 42px;
-    font-weight: 300;
+    font-size: 50px;
+    font-weight: 700;
     margin-bottom: 40px;
     text-align: center;
     color: var(--secondary-color);
@@ -268,6 +247,7 @@ section h2 {
 
 .product-card {
     background: white;
+    color: var(--secondary-color);
     border: 1px solid #eee;
     border-radius: 8px;
     padding: 20px;
@@ -313,7 +293,7 @@ section h2 {
 }
 
 .wishlist-btn:hover {
-    background: var(--primary-color);
+    background:#e00d0d;
     color: white;
 }
 
@@ -321,25 +301,27 @@ section h2 {
     position: absolute;
     top: 10px;
     left: 10px;
-    background: var(--primary-color);
-    color: white;
+    background:#e00d0d;
+    color: var(--bg-color);
     padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 12px;
+    border-radius: 25px;
+    font-size: 15px;
     font-weight: bold;
+    z-index: 10; /* Tăng z-index để nó nằm trên lớp ảnh */
+    pointer-events: none; /* Để badge không chặn các sự kiện hover/click khác */
 }
 
 .product-card h3 {
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 10px;
-    color: var(--secondary-color);
+    color: var();
 }
 
 .product-card .price {
     font-size: 18px;
     font-weight: 600;
-    color: var(--secondary-color);
+    color: var(--dark-gray);
     margin-bottom: 15px;
 }
 
@@ -350,47 +332,61 @@ section h2 {
 }
 
 .product-card .sale-price {
-    color: var(--primary-color);
+    color: var(--dark-gray);
 }
 
 .sold-count {
     margin-top: 10px;
-    font-size: 13px;
+    font-size: 15px;
     color: var(--text-color);
 }
 
 /* ========================================
-   COLLECTIONS HIGHLIGHT
+   MATERIAL
 ======================================== */
 .collections-highlight {
-    background-color: var(--light-gray);
+    background-color: var(--bg-light);
+    padding: 0;
 }
 
 .collection-item {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 0;
+    align-items: stretch;
+    max-width: 100%;
+    margin: 0;
+    min-height: 600px;
 }
 
 .collection-content {
-    padding: 40px;
+    padding: 80px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.collection-content .btn-primary {
+    display: inline-block;
+    width: fit-content;
+    align-self: flex-start;
 }
 
 .collection-label {
     display: block;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
     color: var(--text-color);
-    margin-bottom: 15px;
 }
 
 .collection-content h2 {
+    font-family: 'Prosto One', sans-serif;
+    color: var(--primary-color);
     font-size: 48px;
-    font-weight: 300;
+    font-weight: 700;
     margin-bottom: 20px;
     text-align: left;
 }
@@ -402,11 +398,19 @@ section h2 {
     color: var(--text-color);
 }
 
-.collection-image img {
+.collection-image {
+    position: relative;
     width: 100%;
-    border-radius: 8px;
+    height: 100%;
+    overflow: hidden;
 }
 
+.collection-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 /* ========================================
    COLLECTIONS SLIDER
 ======================================== */
@@ -422,21 +426,90 @@ section h2 {
 
 .slider-header h2 {
     font-size: 52px;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .collections-carousel {
     position: relative;
+    height: 700px;
+}
+
+/* Thêm style cho các nút điều hướng */
+.slide-nav {
+    position: absolute;
+    bottom: 20px; /* Vị trí dưới */
+    right: 20px; /* Vị trí bên phải */
+    width: 60px;
+    height: 60px;
+    background: white;
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 50%;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: var(--transition);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-nav:hover {
+    background: var(--secondary-color);
+    color: white;
+    transform: scale(1.05);
+}
+
+.slide-nav.prev {
+    /* Nút Previous: đặt bên cạnh nút Next */
+    right: 90px; 
+    opacity: 0.8; /* Làm mờ nút lùi một chút */
 }
 
 .collection-slide {
-    position: relative;
+    position: absolute; 
+    width: 100%;
     height: 700px;
+    top: 0;
+    left: 0;
+    display: none; 
+    opacity: 0;
+    transition: opacity 0.1s ease; 
+}
+
+.collection-slide.active {
     display: flex;
-    align-items: center;
-    margin-bottom: 40px;
-    border-radius: 12px;
-    overflow: hidden;
+    opacity: 1;
+    z-index: 5;
+}
+
+.collection-slide.slide-out {
+    /* Class này sẽ được dùng trong JS để làm mờ slide cũ đi */
+    opacity: 0;
+    z-index: 4;
+}
+
+/* KEYFRAMES */
+@keyframes slideInFromRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutToLeft {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(-100%); opacity: 0; }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutToRight {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
 }
 
 .slide-background {
@@ -456,27 +529,22 @@ section h2 {
     position: relative;
     z-index: 2;
     max-width: 500px;
-    padding: 60px;
+    padding: 80px;
     color: white;
 }
 
-.slide-number {
-    font-size: 120px;
-    font-weight: 300;
-    opacity: 0.3;
-    display: block;
-    margin-bottom: -40px;
-}
-
 .slide-content h3 {
-    font-size: 42px;
-    font-weight: 300;
+    font-size: 44px; 
+    font-weight:600;
     margin-bottom: 20px;
+    line-height: 1.1; 
+    white-space: normal; 
 }
 
 .slide-content p {
     font-size: 16px;
-    line-height: 1.8;
+    font-weight:500;
+    line-height: 1.5;
     margin-bottom: 30px;
 }
 
@@ -488,6 +556,7 @@ section h2 {
     z-index: 1;
     display: flex;
     gap: 20px;
+    transition: opacity 0.3s ease;
 }
 
 .slide-images img {
@@ -502,8 +571,40 @@ section h2 {
     margin-top: 60px;
 }
 
+@media (max-width: 768px) {
+    .collection-slide {
+        height: auto;
+        min-height: 500px;
+        position: relative;
+        margin-bottom: 20px;
+    }
+    .slide-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        bottom: 10px;
+        right: 10px;
+    }
+    .slide-nav.prev {
+        right: 60px;
+    }
+    .collections-carousel {
+       height: auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    .slide-content h3 {
+        font-size: 36px;
+    }
+}
+@media (max-width: 768px) {
+    .slide-content h3 {
+        font-size: 28px;
+    }
+}
 /* ========================================
-   INSTAGRAM GALLERY - CAROUSEL (FIXED)
+   INSTAGRAM GALLERY - CAROUSEL
 ======================================== */
 .instagram-fullwidth {
     width: 100%;
@@ -520,9 +621,8 @@ section h2 {
 
 .instagram-header h2 {
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 900;
     color: #000000;
-    letter-spacing: 1px;
 }
 
 .instagram-carousel-wrapper {
@@ -652,196 +752,88 @@ section h2 {
 }
 
 /* ========================================
-   COLLECTION FEATURED SECTION
-======================================== */
-.collection-featured {
-    display: flex;
-    width: 100%;
-    min-height: 600px;
-}
-
-.collection-featured-left {
-    flex: 1;
-    background: #f5f5f5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px;
-}
-
-.collection-featured-left img {
-    max-width: 100%;
-    height: auto;
-}
-
-.collection-featured-right {
-    flex: 1;
-    padding: 80px 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: #fff;
-}
-
-.collection-tag {
-    font-size: 0.85rem;
-    color: #888;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    display: block;
-}
-
-.collection-title {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #333;
-    line-height: 1.2;
-    margin-bottom: 30px;
-}
-
-.collection-description {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #666;
-    margin-bottom: 40px;
-}
-
-.btn-collection {
-    display: inline-block;
-    padding: 15px 40px;
-    background: #1a5f4a;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    align-self: flex-start;
-}
-
-.btn-collection:hover {
-    background: #145241;
-}
-
-/* ========================================
-   MATERIAL SHOWCASE SECTION
-======================================== */
-.material-showcase {
-    display: flex;
-    width: 100%;
-    min-height: 600px;
-    background: #f8f8f8;
-}
-
-.material-showcase-left {
-    flex: 1;
-    padding: 80px 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.material-tag {
-    font-size: 0.85rem;
-    color: #888;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    display: block;
-}
-
-.material-title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: #333;
-    line-height: 1.1;
-    margin-bottom: 30px;
-}
-
-.material-description {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #666;
-    margin-bottom: 40px;
-}
-
-.btn-material {
-    display: inline-block;
-    padding: 15px 40px;
-    background: #1a5f4a;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    align-self: flex-start;
-}
-
-.btn-material:hover {
-    background: #145241;
-}
-
-.material-showcase-right {
-    flex: 1;
-    background: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px;
-}
-
-.material-showcase-right img {
-    max-width: 100%;
-    height: auto;
-}
-
-
-/* ========================================
    CARBON NEGATIVE SECTION
 ======================================== */
 .carbon-negative {
-    background-color: var(--light-gray);
+    background-size: cover;
+    background-position: center;
+    background-attachment:scroll;
     text-align: center;
+    padding: 180px 0;
+    min-height: 500px;
 }
 
 .carbon-negative h2 {
-    font-size: 48px;
-    margin-bottom: 20px;
+    font-family: 'Prosto One', sans-serif;
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: white;
 }
 
 .carbon-negative p {
     font-size: 18px;
+    font-weight: 500;
     max-width: 600px;
     margin: 0 auto 40px;
-    line-height: 1.8;
+    line-height: 1.5;
+    color: white;
 }
-
 /* ========================================
    INFO BOXES
 ======================================== */
 .info-boxes {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    padding: 80px 0;
+    gap: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .info-box {
-    background-color: var(--light-gray);
-    padding: 60px;
+    background-size: cover;
+    background-position: center;
+    padding: 180px 60px;
+    min-height: 500px;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 0;
+    position: relative;
+    color: white;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.info-box h3,
+.info-box .btn-secondary {
+    position: relative;
+    z-index: 2;
 }
 
 .info-box h3 {
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
     text-transform: uppercase;
+    color: white;
+}
+
+.btn-secondary:hover {
+    border: 3px solid transparent;
+    background-color: var(--secondary-color);
+    color: white;
 }
 
 /* ========================================
@@ -908,20 +900,19 @@ section h2 {
 
 .btn-read-more {
     display: inline-block;
-    padding: 10px 25px;
+    padding: 10px 20px;
     background-color: var(--secondary-color);
     color: white;
-    border-radius: 3px;
-    font-size: 12px;
+    border-radius: 5px;
+    font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .btn-read-more:hover {
-    background-color: var(--primary-color);
+    background-color: var(--primary-dark);
 }
-
 /* ========================================
    NEWSLETTER
 ======================================== */
@@ -958,6 +949,7 @@ section h2 {
 
 .newsletter-form button {
     padding: 15px 30px;
+    background-color: var(--secondary-color);
 }
 
 /* ========================================
@@ -1045,7 +1037,7 @@ section h2 {
     position: absolute;
     top: -20px;
     right: 40px;
-    background: var(--primary-color);
+    background: #e00d0d;
     color: white;
     width: 80px;
     height: 80px;
