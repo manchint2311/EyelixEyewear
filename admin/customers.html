@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eyelix Admin - Customers</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="brand"><h2>EYE<span>LIX</span></h2></div>
+        <ul class="side-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="products.html"><i class="fas fa-glasses"></i> Products</a></li>
+            <li><a href="orders.html"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+            <li><a href="customers.html" class="active"><i class="fas fa-users"></i> Customers</a></li>
+            <li><a href="../index.html"><i class="fas fa-sign-out-alt"></i> Back to Site</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h2>Customer Management</h2>
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="search" placeholder="Search customer...">
+            </div>
+        </header>
+
+        <div class="card">
+            <div class="card-body">
+                <table>
+                    <thead>
+                        <tr><td>Name</td><td>Email</td><td>Location</td><td>Orders</td><td>Spent</td><td>Loyalty</td><td>Actions</td></tr>
+                    </thead>
+                    <tbody id="customerTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="customerModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('customerModal')">&times;</span>
+            <div class="modal-header"><h2>Customer Profile</h2></div>
+            
+            <div class="order-info">
+                <div>Name: <strong id="custName"></strong></div>
+                <div>Email: <strong id="custEmail"></strong></div>
+                <div>Loyalty Points: <strong id="custPoints" style="color: green;"></strong></div>
+            </div>
+
+            <h3>Order History</h3>
+            <table class="mini-table" style="width: 100%; margin-bottom: 20px; border: 1px solid #eee;">
+                <thead style="background: #f8fafc;"><tr><th>Order ID</th><th>Date</th><th>Total</th></tr></thead>
+                <tbody id="custHistory"></tbody>
+            </table>
+
+            <div class="form-group">
+                <label>Admin Notes (Private):</label>
+                <textarea id="custNotes" rows="3" placeholder="Add note about this customer..."></textarea>
+                <button class="btn-main" id="btnSaveNote" style="margin-top: 10px; width: 100%; justify-content: center;">Save Note</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

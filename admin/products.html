@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eyelix Admin - Products</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="brand"><h2>EYE<span>LIX</span></h2></div>
+        <ul class="side-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="products.html" class="active"><i class="fas fa-glasses"></i> Products</a></li>
+            <li><a href="orders.html"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+            <li><a href="customers.html"><i class="fas fa-users"></i> Customers</a></li>
+            <li><a href="../index.html"><i class="fas fa-sign-out-alt"></i> Back to Site</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h2>Products Management</h2>
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="search" id="searchProduct" placeholder="Search name or SKU..." onkeyup="filterProducts()">
+            </div>
+        </header>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="filters">
+                    <select id="filterCategory" onchange="filterProducts()">
+                        <option value="All">All Categories</option>
+                        <option value="Glasses">Glasses</option>
+                        <option value="Sunglasses">Sunglasses</option>
+                    </select>
+                    <select id="filterStock" onchange="filterProducts()">
+                        <option value="All">All Stock</option>
+                        <option value="In Stock">In Stock</option>
+                        <option value="Out of Stock">Out of Stock</option>
+                    </select>
+                </div>
+                <button class="btn-main" onclick="openProductModal()"><i class="fas fa-plus"></i> Add New</button>
+            </div>
+            <div class="card-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Img</td><td>Name</td><td>SKU</td><td>Price</td><td>Category</td><td>Stock</td><td>Status</td><td>Actions</td>
+                        </tr>
+                    </thead>
+                    <tbody id="productTableBody">
+                        </tbody>
+                </table>
+                <div class="pagination"><button class="active">1</button><button>2</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('productModal')">&times;</span>
+            <div class="modal-header"><h2 id="productModalTitle">Add New Product</h2></div>
+            <form id="productForm" onsubmit="event.preventDefault(); saveProduct();">
+                <div class="form-group"><label>Product Name</label><input type="text" id="prodName" required></div>
+                <div class="form-row">
+                    <div class="form-group"><label>SKU</label><input type="text" id="prodSku" required></div>
+                    <div class="form-group"><label>Price</label><input type="number" id="prodPrice" required></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label>Category</label><select id="prodCategory"><option>Glasses</option><option>Sunglasses</option></select></div>
+                    <div class="form-group"><label>Stock</label><input type="number" id="prodStock" required></div>
+                </div>
+                <div class="form-group"><label>Image</label><input type="file"></div>
+                <button type="submit" class="btn-main" style="width: 100%; justify-content: center;">Save Product</button>
+            </form>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
