@@ -393,6 +393,104 @@ function initCollectionsCarousel() {
 }
 
 initCollectionsCarousel();
+// ========================================
+// COLLECTIONS CAROUSEL WITH NAVIGATION & FADE
+// ========================================
+function initCollectionsCarousel() {
+    const carousel = document.querySelector('.collections-carousel');
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll('.collection-slide');
+    let currentSlide = 0;
+    let autoPlayInterval;
+    const transitionDuration = 400; // 0.4s - khớp với transition trong CSS
+
+    // Tạo nút điều hướng (giữ nguyên icon)
+    const prevArrow = document.createElement('button');
+    prevArrow.className = 'slide-nav prev';
+    prevArrow.innerHTML = '<i class="fas fa-angle-left"></i>'; 
+
+    const nextArrow = document.createElement('button');
+    nextArrow.className = 'slide-nav next';
+    nextArrow.innerHTML = '<i class="fas fa-angle-right"></i>'; 
+
+    carousel.appendChild(prevArrow);
+    carousel.appendChild(nextArrow);
+
+    function showSlide(index) {
+        // Bắt đầu hiển thị slide mới ngay lập tức
+        slides[index].style.display = 'flex';
+        
+        // Vòng lặp để xử lý slide cũ
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                // Slide mới: thêm active để opacity: 1 (Fade In)
+                setTimeout(() => {
+                    slide.classList.add('active');
+                }, 10); // Thêm độ trễ nhỏ để transition hoạt động
+            } else if (slide.classList.contains('active')) {
+                // Slide cũ: xóa active để opacity: 0 (Fade Out)
+                slide.classList.remove('active');
+                
+                // Sau khi transition (mờ) kết thúc, ẩn hoàn toàn slide cũ
+                setTimeout(() => {
+                    slide.style.display = 'none';
+                }, transitionDuration); 
+            } else {
+                // Đảm bảo các slide khác luôn ẩn
+                slide.style.display = 'none';
+                slide.classList.remove('active');
+            }
+        });
+    }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Event listeners for arrows
+    nextArrow.addEventListener('click', () => {
+        nextSlide();
+        resetAutoPlay();
+    });
+
+    prevArrow.addEventListener('click', () => {
+        prevSlide();
+        resetAutoPlay();
+    });
+
+    // Auto play functionality
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextSlide, 5000);
+    }
+
+    function resetAutoPlay() {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+    }
+
+    // Initialize
+    slides.forEach(slide => slide.style.transition = `opacity ${transitionDuration/1000}s ease-in-out`); // Gán transition style
+    showSlide(0);
+    startAutoPlay();
+
+    // Pause on hover
+    carousel.addEventListener('mouseenter', () => {
+        clearInterval(autoPlayInterval);
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+        startAutoPlay();
+    });
+}
+
+initCollectionsCarousel();
 
 // ========================================
 // INSTAGRAM GRID LIGHTBOX
