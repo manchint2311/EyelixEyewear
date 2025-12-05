@@ -178,7 +178,7 @@
 }
 
 .nav-right .btn-wishlist:hover {
-    background: #ffffff;
+    color: var(--primary-dark);
     transform: translateY(-1px);
 }
 
@@ -248,4 +248,5 @@
 .icon-btn:hover svg {
     transform: scale(1.1);
 }
+
 
