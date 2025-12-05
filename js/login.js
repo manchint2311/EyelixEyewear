@@ -1,6 +1,4 @@
-// ========================================
 // Login Page JavaScript
-// ========================================
 
 document.addEventListener('DOMContentLoaded', function() {
     // Form Elements
@@ -192,10 +190,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return new Promise((resolve, reject) => {
             // Simulate network delay
             setTimeout(() => {
-                // Demo: Accept any credentials for testing
-                // In production, this would be a real API call
-                
-                // Simulate different responses
                 if (username === 'demo' && password === 'demo123') {
                     resolve({
                         success: true,
@@ -228,9 +222,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleFacebookLogin() {
         console.log('Facebook login clicked');
         showMessage('This feature is coming soon.', 'error');
-        
-        // In production, implement Facebook OAuth flow
-        // window.location.href = 'https://www.facebook.com/dialog/oauth?client_id=...';
     }
 
     // Showcase Slideshow Functions
@@ -285,4 +276,5 @@ if (typeof module !== 'undefined' && module.exports) {
         isValidPhone,
         isValidUsername
     };
+
 }
