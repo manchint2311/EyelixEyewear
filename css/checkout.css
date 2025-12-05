@@ -1,8 +1,8 @@
 .checkout-page {
     display: flex;
     justify-content: space-between;
-    padding: 40px;
-    background: #f9f9f9;
+    padding: 5px;
+    background: #ffffff;
 }
 
 .checkout-layout {
@@ -14,13 +14,29 @@
     margin: 0 auto; 
 }
 
+/* Notification Banner */
+.cart-alert {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #4caf50;
+    color: #4caf50;
+    font-size: 16px;
+    margin-bottom: 30px; 
+}
+
+.cart-alert .star-icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
 /* BILLING */
 .checkout-left {
     width: 55%; 
     padding: 30px;
     background: white;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
 }
 
 /* ORDER */
@@ -29,17 +45,17 @@
     padding: 30px;
     background: white;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e5e5;
     height: fit-content; 
 }
 /* TYPOGRAPHY */
 .checkout-left h2, 
 .checkout-right h2 {
-    font-size: 18px;
-    font-weight: 800;
+    font-size: 20px;
+    font-weight: 700;
     color: #000;
     margin-bottom: 25px;
-    text-transform: uppercase; 
+    text-transform: none; 
     letter-spacing: 0.5px;
     text-align: left; 
 }
@@ -274,18 +290,43 @@ input[type="radio"] {
 
 .btn-place-order {
     width: 100%;
-    padding: 15px;
-    background: #E53935; 
+    padding: 12px 20px;
+    background-color: #ff6f3c;
     color: white;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
 }
 
 .btn-place-order:hover {
-    background: #d32f2f;
+    background-color: #e65b2e;
+    transform: translateY(-2px);
 }
 
+.checkout-title-wrapper {
+    width: 100%;
+    padding: 40px 0 10px;
+    background: #fff;
+}
+
+.checkout-title {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #000;
+}
+
+.cart-alert-wrapper {
+    max-width: 1160px;
+    margin: 0 auto 5px auto;  
+    padding: 0 20px; 
+}
+
+.cart-alert {
+    border-radius: 6px;
+}
