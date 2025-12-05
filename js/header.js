@@ -1,4 +1,4 @@
-// ============ HEADER COMPONENT ============
+//HEADER COMPONENT 
 // File: js/header.js
 // Usage: <header id="header"></header> + <script src="js/header.js"></script>
 
@@ -75,24 +75,24 @@ const headerHTML = `
     </nav>
 `;
 
-// Insert header HTML vào #header element
+// Insert header HTML to #header element
 function initHeader() {
     const headerElement = document.getElementById('header');
     if (headerElement) {
         headerElement.innerHTML = headerHTML;
         
-        // Update cart count từ localStorage
+        // Update cart count  from localStorage
         updateCartCount();
         
         // Set active menu item
         setActiveMenu();
         
-        // Thêm event listeners
+        // Add event listeners
         setupHeaderEvents();
     }
 }
 
-// Update giỏ hàng count
+// Update cart count
 function updateCartCount() {
     const cartCount = document.querySelector('.cart-count');
     if (cartCount) {
@@ -101,7 +101,6 @@ function updateCartCount() {
     }
 }
 
-// Set active menu item dựa trên current page
 function setActiveMenu() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-left a').forEach(link => {
@@ -147,9 +146,10 @@ function setupHeaderEvents() {
     });
 }
 
-// Initialize header khi DOM ready
+// Initialize header when DOM ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initHeader);
 } else {
     initHeader();
+
 }
