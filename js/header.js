@@ -1,12 +1,8 @@
-//HEADER COMPONENT 
+// ============ HEADER COMPONENT ============
 // File: js/header.js
 // Usage: <header id="header"></header> + <script src="js/header.js"></script>
 
 const headerHTML = `
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <p>Carbon Negative Eyewear.</p>
-    </div>
 
     <!-- Main Navigation -->
     <nav class="main-nav">
@@ -69,30 +65,30 @@ const headerHTML = `
                     <span class="cart-count">0</span>
                 </a>
                 
-                <a href="reviews.html" class="btn-reviews">REVIEWS</a>
+                <a href="wishlist.html" class="btn-wishlist">WISHLIST</a>
             </div>
         </div>
     </nav>
 `;
 
-// Insert header HTML to #header element
+// Insert header HTML vào #header element
 function initHeader() {
     const headerElement = document.getElementById('header');
     if (headerElement) {
         headerElement.innerHTML = headerHTML;
         
-        // Update cart count  from localStorage
+        // Update cart count từ localStorage
         updateCartCount();
         
         // Set active menu item
         setActiveMenu();
         
-        // Add event listeners
+        // Thêm event listeners
         setupHeaderEvents();
     }
 }
 
-// Update cart count
+// Update giỏ hàng count
 function updateCartCount() {
     const cartCount = document.querySelector('.cart-count');
     if (cartCount) {
@@ -101,6 +97,7 @@ function updateCartCount() {
     }
 }
 
+// Set active menu item dựa trên current page
 function setActiveMenu() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-left a').forEach(link => {
@@ -146,10 +143,9 @@ function setupHeaderEvents() {
     });
 }
 
-// Initialize header when DOM ready
+// Initialize header khi DOM ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initHeader);
 } else {
     initHeader();
-
 }
