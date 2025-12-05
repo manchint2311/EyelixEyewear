@@ -1,4 +1,3 @@
- // Sample
         const products = [
             {
                 id: 4182,
@@ -202,7 +201,6 @@
             grid.innerHTML = '';
 
             sorted.forEach(product => {
-                // Tạo URL chi tiết sản phẩm (sử dụng product.id để dễ dàng quản lý sau này)
                 const detailUrl = `detail-product.html?id=${product.id}`;
 
                 const productHTML = `
@@ -279,9 +277,7 @@
         // Initial render
         renderProducts();
 
-        // =====================================
         // SIDEBAR ACCORDION LOGIC
-        // =====================================
         function toggleFilterSection(headerElement) {
             const parent = headerElement.closest('.filter-section-sidebar');
             const content = parent.querySelector('.filter-content');
@@ -289,10 +285,8 @@
             parent.classList.toggle('open');
             
             if (parent.classList.contains('open')) {
-                // Mở
                 content.classList.remove('collapsed');
             } else {
-                // Đóng
                 content.classList.add('collapsed');
             }
         }
@@ -309,4 +303,5 @@
                 }
             });
         });
+
 
