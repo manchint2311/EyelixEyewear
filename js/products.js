@@ -64,6 +64,10 @@
                 rating: 4,
                 reviewCount: 15,
                 filter: ['all', 'bestseller'],
+                variations: [
+                    { color: 'black', image: 'images/products/maison.png' },
+                    { color: 'gray', image: 'images/products/maison-gray.png' }
+                ]
             },
             {
                 id: 4194,
@@ -198,15 +202,22 @@
             grid.innerHTML = '';
 
             sorted.forEach(product => {
+                // Tạo URL chi tiết sản phẩm (sử dụng product.id để dễ dàng quản lý sau này)
+                const detailUrl = `detail-product.html?id=${product.id}`;
+
                 const productHTML = `
                     <div class="product-item">
                         <div class="product-image">
-                            <img src="${product.image}" alt="${product.title}" style="transition: opacity 0.3s ease;">
+                            <a href="${detailUrl}" title="${product.title}">
+                                <img src="${product.image}" alt="${product.title}" style="transition: opacity 0.3s ease;">
+                            </a>
                             ${product.badge ? `<div class="product-badge ${product.badge}">${product.badge === 'sale' ? 'Sale' : 'New'}</div>` : ''}
                         </div>
                         <div class="product-info">
                             <div class="product-category">${product.category}</div>
-                            <div class="product-title">${product.title}</div>
+                            <div class="product-title">
+                                <a href="${detailUrl}" class="product-title-link">${product.title}</a>
+                            </div>
                             ${generateColorVariations(product.id, product.variations)}
                             ${generateStarRating(product.rating, product.reviewCount)}
                             <div class="product-price ${product.badge === 'sale' ? 'sale' : ''}">
@@ -298,3 +309,4 @@
                 }
             });
         });
+
