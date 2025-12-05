@@ -14,7 +14,7 @@
     margin: 0 auto; 
 }
 
-/* --- BILLING --- */
+/* BILLING */
 .checkout-left {
     width: 55%; 
     padding: 30px;
@@ -23,7 +23,7 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
 }
 
-/* ---ORDER --- */
+/* ORDER */
 .checkout-right {
     width: 40%; 
     padding: 30px;
@@ -32,7 +32,7 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     height: fit-content; 
 }
-/* --- TYPOGRAPHY --- */
+/* TYPOGRAPHY */
 .checkout-left h2, 
 .checkout-right h2 {
     font-size: 18px;
@@ -44,7 +44,7 @@
     text-align: left; 
 }
 
-/* --- FORM LAYOUT (Cột Trái) --- */
+/* FORM LAYOUT */
 .form-row {
     display: flex;
     gap: 20px; 
@@ -120,7 +120,7 @@
     accent-color: #000;
 }
 
-/* --- ORDER SUMMARY --- */
+/*ORDER SUMMARY */
 
 .estimated-delivery {
     border: 1px dashed #ddd;
@@ -200,7 +200,7 @@
     font-weight: 400;
 }
 
-/* --- PAYMENT BOX --- */
+/* PAYMENT BOX */
 .payment-box {
     border: 1px solid #e1e1e1;
     border-radius: 4px;
@@ -258,7 +258,7 @@ input[type="radio"] {
     border-top: 1px solid #eee;
 }
 
-/* --- PRIVACY & BUTTON --- */
+/* PRIVACY & BUTTON */
 .privacy-policy {
     font-size: 12px;
     color: #777;
@@ -288,3 +288,4 @@ input[type="radio"] {
 .btn-place-order:hover {
     background: #d32f2f;
 }
+
