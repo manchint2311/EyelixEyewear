@@ -47,15 +47,12 @@ signupForm.addEventListener('submit', function(e) {
     
     console.log('Form submitted:', formData);
     
-    // Add your signup logic here
-    // Example: send data to server
     alert('Sign up functionality will be implemented here!');
 });
 
 // Facebook Login Handler
 document.querySelector('.btn-facebook').addEventListener('click', function() {
     console.log('Facebook login clicked');
-    // Add Facebook login logic here
     alert('Facebook login functionality will be implemented here!');
 });
 
