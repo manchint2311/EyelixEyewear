@@ -1,5 +1,4 @@
-
-        // Sample Product Data with rating and variations
+ // Sample
         const products = [
             {
                 id: 4182,
@@ -16,7 +15,6 @@
                 variations: [
                     { color: 'black', image: 'images/products/oris.png' },
                     { color: 'tortoise', image: 'images/products/oris-tortoise.png' },
-                    { color: 'gold', image: 'images/products/oris-gold.png' },
                     { color: 'rose', image: 'images/products/oris-rose.png' }
                 ]
             },
@@ -33,8 +31,8 @@
                 reviewCount: 8,
                 filter: ['all', 'bestseller'],
                 variations: [
-                    { color: 'black', image: 'images/products/jules.png' },
-                    { color: 'brown', image: 'images/products/jules-brown.png' }
+                    { color: 'black', image: 'images/products/jules-black.png' },
+                    { color: 'tortoise', image: 'images/products/jules.png' },
                 ]
             },
             {
@@ -66,10 +64,6 @@
                 rating: 4,
                 reviewCount: 15,
                 filter: ['all', 'bestseller'],
-                variations: [
-                    { color: 'brown', image: 'images/products/nuit-brown.png' },
-                    { color: 'crystal', image: 'images/products/nuit-crystal.png' }
-                ]
             },
             {
                 id: 4194,
@@ -273,3 +267,34 @@
 
         // Initial render
         renderProducts();
+
+        // =====================================
+        // SIDEBAR ACCORDION LOGIC
+        // =====================================
+        function toggleFilterSection(headerElement) {
+            const parent = headerElement.closest('.filter-section-sidebar');
+            const content = parent.querySelector('.filter-content');
+            
+            parent.classList.toggle('open');
+            
+            if (parent.classList.contains('open')) {
+                // Mở
+                content.classList.remove('collapsed');
+            } else {
+                // Đóng
+                content.classList.add('collapsed');
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.filter-section-sidebar').forEach((group, index) => {
+                const content = group.querySelector('.filter-content');
+                if (index === 0) {
+                    group.classList.add('open');
+                    content.classList.remove('collapsed');
+                } else {
+                    group.classList.remove('open');
+                    content.classList.add('collapsed');
+                }
+            });
+        });
