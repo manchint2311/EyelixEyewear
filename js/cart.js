@@ -1,6 +1,4 @@
-// ========================================
 // SHOPPING CART FUNCTIONALITY
-// ========================================
 
 // Cart Storage
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -367,5 +365,6 @@ window.clearCartAfterOrder = function() {
     localStorage.removeItem('appliedDiscount');
     localStorage.removeItem('couponCode');
 };
+
 
 console.log('Cart system initialized');
