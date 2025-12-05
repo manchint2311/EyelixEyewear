@@ -1,4 +1,4 @@
-// ============ FOOTER COMPONENT ============
+// FOOTER COMPONENT
 // File: js/footer.js
 // Usage: <footer id="footer"></footer> + <script src="js/footer.js"></script>
 
@@ -74,7 +74,7 @@ const footerHTML = `
     </div>
 `;
 
-// Insert footer HTML vào #footer element
+// Insert footer HTML to #footer element
 function initFooter() {
     const footerElement = document.getElementById('footer');
     if (footerElement) {
@@ -92,14 +92,12 @@ function setupFooterEvents() {
             e.preventDefault();
             const platform = link.getAttribute('aria-label');
             console.log(`Opening ${platform}`);
-            // TODO: Implement social media links
         });
     });
 
     // Smooth scroll for footer links
     document.querySelectorAll('.footer-col a').forEach(link => {
         link.addEventListener('click', (e) => {
-            // Let normal navigation happen, but can add tracking here
             console.log(`Navigating to: ${link.getAttribute('href')}`);
         });
     });
@@ -111,3 +109,4 @@ if (document.readyState === 'loading') {
 } else {
     initFooter();
 }
+
