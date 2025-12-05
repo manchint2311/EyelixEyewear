@@ -1,4 +1,3 @@
-/* CONTACT PAGE STYLES */
 .contact-section {
     display: flex;
     justify-content: center;
@@ -21,18 +20,17 @@
 
 .image-container img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0;     
-    box-shadow: none; 
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .form-container {
     flex: 1.5;
+    background-color: white;
     padding: 40px;
-    background-color: transparent; 
-    box-shadow: none; 
-    border-radius: 0; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     max-width: 600px;
     width: 100%;
 }
@@ -68,23 +66,19 @@
 }
 
 .send-button {
-    display: inline-block;
-    padding: 8px 20px;
-    background-color: #000000;
+    background-color: black;
     color: white;
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
     border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
+    border-radius: 6px;
+    transition: background 0.3s ease;
 }
 
 .send-button:hover {
-    background-color: #000000;
-    transform: translateY(-2px);
+    background-color: var(--primary-dark);
 }
 
 /* Ensure responsiveness */
@@ -107,10 +101,9 @@
 }
 
 .map-section h2 {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 700;
     margin-bottom: 30px;
-    color: #000;
 }
 
 .map-container iframe {
