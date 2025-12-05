@@ -1,4 +1,3 @@
-// 1. Dữ liệu mẫu (Sử dụng đường dẫn ảnh thật từ cấu trúc thư mục của bạn)
 let wishlistData = [
     {
         id: 1,
@@ -33,7 +32,6 @@ const addSelectedBtn = document.getElementById("add-selected-to-cart");
 const addAllBtn = document.getElementById("add-all-to-cart");
 const actionSelect = document.getElementById("action-select");
 
-// 2. Render Wishlist
 function renderWishlist() {
     wishlistItemsContainer.innerHTML = '';
 
@@ -81,7 +79,6 @@ function renderWishlist() {
     });
 }
 
-// 3. Xóa sản phẩm khỏi Wishlist
 window.removeFromWishlist = function(index) {
     if(confirm("Remove this item from wishlist?")) {
         wishlistData.splice(index, 1);
@@ -89,18 +86,15 @@ window.removeFromWishlist = function(index) {
     }
 };
 
-// 4. Thêm 1 sản phẩm vào giỏ hàng (LocalStorage)
 window.addToCartSingle = function(index) {
     const product = wishlistData[index];
     addItemToLocalStorage(product);
     alert(`"${product.name}" has been added to your cart!`);
 };
 
-// Hàm chung để thêm vào LocalStorage
 function addItemToLocalStorage(product) {
     let cart = JSON.parse(localStorage.getItem("eyelixCart")) || [];
     
-    // Kiểm tra xem sản phẩm đã có trong giỏ chưa
     const existingItem = cart.find(item => item.name === product.name);
     
     if (existingItem) {
@@ -116,11 +110,9 @@ function addItemToLocalStorage(product) {
     
     localStorage.setItem("eyelixCart", JSON.stringify(cart));
     
-    // Bắn sự kiện để Header cập nhật số lượng (nếu có logic ở header.js)
     window.dispatchEvent(new Event("cartUpdated"));
 }
 
-// 5. Xử lý nút "Add Selected to Cart"
 addSelectedBtn.addEventListener('click', () => {
     const checkboxes = document.querySelectorAll('.product-checkbox:checked');
     if (checkboxes.length === 0) {
@@ -134,10 +126,9 @@ addSelectedBtn.addEventListener('click', () => {
     });
 
     alert("Selected items have been added to cart!");
-    window.location.href = "cart.html"; // Chuyển hướng sang giỏ hàng xem thử
+    window.location.href = "cart.html"; 
 });
 
-// 6. Xử lý nút "Add All to Cart"
 addAllBtn.addEventListener('click', () => {
     if (wishlistData.length === 0) return;
 
@@ -149,7 +140,6 @@ addAllBtn.addEventListener('click', () => {
     window.location.href = "cart.html";
 });
 
-// 7. Xử lý nút "Apply Action" (Dropdown)
 applyActionBtn.addEventListener('click', () => {
     const action = actionSelect.value;
     const checkboxes = document.querySelectorAll('.product-checkbox:checked');
@@ -165,20 +155,17 @@ applyActionBtn.addEventListener('click', () => {
     }
 
     if (action === "add-cart") {
-        // Giống nút Add Selected
         checkboxes.forEach(box => {
             addItemToLocalStorage(wishlistData[box.getAttribute('data-index')]);
         });
         alert("Items added to cart.");
     } 
     else if (action === "remove") {
-        // Xóa nhiều item (Logic xóa ngược từ dưới lên để không bị lỗi index)
         let indicesToRemove = [];
         checkboxes.forEach(box => {
             indicesToRemove.push(parseInt(box.getAttribute('data-index')));
         });
         
-        // Sắp xếp giảm dần
         indicesToRemove.sort((a, b) => b - a);
         
         indicesToRemove.forEach(index => {
@@ -190,4 +177,5 @@ applyActionBtn.addEventListener('click', () => {
 });
 
 // Init
+
 renderWishlist();
