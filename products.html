@@ -6,7 +6,7 @@
     <title>Eyelix - Carbon Negative Eyewear | Sustainable & Stylish Glasses</title>
     <meta name="description" content="Discover Eyelix, the pioneer in carbon negative eyewear. Shop stylish & sustainable sunglasses and frames designed for the planet.">
     
-    <!-- Font Awesome for star icons -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Link CSS files -->
@@ -14,81 +14,10 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/products.css">
-
-    <style>
-        /* Star rating styles */
-        .product-rating {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-        }
-
-        .star {
-            display: flex;
-            gap: 2px;
-        }
-
-        .star i {
-            color: #ffc107;
-            font-size: 14px;
-        }
-
-        .star i.far {
-            color: #ddd;
-        }
-
-        .rating-count {
-            font-size: 12px;
-            color: #687279;
-        }
-
-        /* Color variations styles */
-        .product-variations {
-            display: flex;
-            gap: 8px;
-            margin-top: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .color-option {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            border: 0px solid transparent;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .color-option:hover {
-            transform: scale(1.1);
-            border-color: #d2d2d2;
-        }
-
-        .color-option.active {
-            border-color: #e5e5e5;
-            box-shadow: 0 0 0 2px #fff, 0 0 0 2px #333;
-        }
-
-        /* Specific colors */
-        .color-black { background-color: #000; }
-        .color-tortoise { background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #654321 100%); }
-        .color-gold { background-color: #ffd900; }
-        .color-rose { background-color: #E8C4C4; }
-        .color-gray { background-color: #808080; }
-        .color-brown { background-color: #8B4513; }
-        .color-crystal { 
-            background: linear-gradient(135deg, rgba(255,255,255,0.5) 0%, rgba(230,230,230,0.8) 100%);
-            border: 2px solid #ddd;
-        }
-    </style>
 </head>
 <body>
-    <!--  HEADER - Inject từ js/header.js -->
     <header id="header"></header>
 
-    <!-- HERO BANNER SECTION -->
     <div class="hero-banner">
         <img src="images/banner/jaehyun.jpg" alt="Glasses Collection Banner" class="hero-banner-image">
         <div class="page-title">
@@ -97,32 +26,100 @@
         </div>
     </div>
 
-    <!-- MAIN CONTENT -->
+    
     <div class="container">
-        <div class="filter-section">
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">All Products</button>
-                <button class="filter-btn" data-filter="bestseller">Bestsellers</button>
-                <button class="filter-btn" data-filter="new">New In</button>
-                <button class="filter-btn" data-filter="sale">Sale</button>
-            </div>
-            <select class="sort-dropdown" id="sortBy">
-                <option value="featured">Featured</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-                <option value="newest">Newest</option>
-            </select>
-        </div>
+        <div class="product-content-wrapper"> 
+            
+            <aside class="sidebar product-sidebar">
+                <div class="filter-section-sidebar">
+                    <div class="filter-header" onclick="toggleFilterSection(this)">
+                        <span>Material</span>
+                        <span class="toggle-icon">▲</span>
+                    </div>
+                    <ul class="filter-content filter-list">
+                        <li class="filter-option" data-filter-type="material" data-value="Acetate">Acetate </li>
+                        <li class="filter-option" data-filter-type="material" data-value="Metal">Metal </li>
+                    </ul>
+                </div>
 
-        <div class="products-grid" id="productsGrid">
-            <!-- Products will be loaded by JavaScript -->
+                <div class="filter-section-sidebar">
+                    <div class="filter-header" onclick="toggleFilterSection(this)">
+                        <span>Color</span>
+                        <span class="toggle-icon">▲</span>
+                    </div>
+                    <ul class="filter-content filter-color-list">
+                        <li class="color-filter-option" data-filter-type="color" data-value="black">
+                            <div class="color-swatch black"></div>
+                            <span class="filter-option-label">Black</span>
+                        </li>
+                        <li class="color-filter-option" data-filter-type="color" data-value="tortoise">
+                            <div class="color-swatch tortoise"></div>
+                            <span class="filter-option-label">Tortoise</span>
+                        </li>
+                        <li class="color-filter-option" data-filter-type="color" data-value="gold">
+                            <div class="color-swatch gold"></div>
+                            <span class="filter-option-label">Gold</span>
+                        </li>
+                        <li class="color-filter-option" data-filter-type="color" data-value="rose">
+                            <div class="color-swatch rose"></div>
+                            <span class="filter-option-label">Rose</span>
+                        </li>
+                        <li class="color-filter-option" data-filter-type="color" data-value="gray">
+                            <div class="color-swatch gray"></div>
+                            <span class="filter-option-label">Gray</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="filter-section-sidebar">
+                    <div class="filter-header" onclick="toggleFilterSection(this)">
+                        <span>Shape</span>
+                        <span class="toggle-icon">▲</span>
+                    </div>
+                    <ul class="filter-content filter-list">
+                        <li class="filter-option" data-filter-type="shape" data-value="Round">Round</li>
+                        <li class="filter-option" data-filter-type="shape" data-value="Square">Square</li>
+                        <li class="filter-option" data-filter-type="shape" data-value="Cat-Eye">Cat-Eye</li>
+                    </ul>
+                </div>
+
+                <div class="filter-section-sidebar">
+                    <div class="filter-header" onclick="toggleFilterSection(this)">
+                        <span>Size</span>
+                        <span class="toggle-icon">▲</span>
+                    </div>
+                    <ul class="filter-content filter-list">
+                        <li class="filter-option" data-filter-type="size" data-value="Small">Small</li>
+                        <li class="filter-option" data-filter-type="size" data-value="Medium">Medium</li>
+                        <li class="filter-option" data-filter-type="size" data-value="Large">Large</li>
+                    </ul>
+                </div>
+            </aside>
+            
+            <main class="product-main-content">
+                <div class="filter-section">
+                    <div class="filters">
+                        <button class="filter-btn active" data-filter="all">All Products</button>
+                        <button class="filter-btn" data-filter="bestseller">Bestsellers</button>
+                        <button class="filter-btn" data-filter="new">New In</button>
+                        <button class="filter-btn" data-filter="sale">Sale</button>
+                    </div>
+                    <select class="sort-dropdown" id="sortBy">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest</option>
+                    </select>
+                </div>
+
+                <div class="products-grid" id="productsGrid">
+                    </div>
+            </main>
         </div>
     </div>
 
-   <!-- FOOTER - Inject từ js/footer.js -->
-    <footer id="footer"></footer>
+   <footer id="footer"></footer>
 
-    <!--JavaScript Files (Header & Footer must be loaded FIRST) -->
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
     <script src="js/main.js"></script>
