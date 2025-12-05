@@ -1,4 +1,4 @@
-/* Header Styles - Full Width */
+/* Header Styles */
 #header {
     width: 100%;
     position: sticky;
@@ -224,9 +224,8 @@
 }
 
 @media (max-width: 1024px) {
-    /* Mobile menu toggle would go here */
     .nav-left {
-        display: none; /* Hide on mobile, add hamburger menu */
+        display: none;
     }
     
     .nav-wrapper {
@@ -249,3 +248,4 @@
 .icon-btn:hover svg {
     transform: scale(1.1);
 }
+
