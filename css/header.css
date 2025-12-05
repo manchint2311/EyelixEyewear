@@ -164,7 +164,7 @@
     font-weight: 600;
 }
 
-.btn-reviews {
+.nav-right .btn-wishlist {
     background: #ffffff;
     color: #000000;
     padding: 8px 20px;
@@ -177,7 +177,7 @@
     white-space: nowrap;
 }
 
-.btn-reviews:hover {
+.nav-right .btn-wishlist:hover {
     background: #ffffff;
     transform: translateY(-1px);
 }
@@ -237,7 +237,6 @@
         margin: 0;
     }
 }
-
 
 /* SVG Icons Styling */
 .icon-btn svg {
