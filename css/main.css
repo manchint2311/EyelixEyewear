@@ -1,6 +1,4 @@
-/* ========================================
-   RESET & VARIABLES
-======================================== */
+/* RESET & VARIABLES */
 * {
     margin: 0;
     padding: 0;
@@ -53,9 +51,7 @@ button {
     font-family: inherit;
 }
 
-/* ========================================
-   BUTTONS
-======================================== */
+/* BUTTONS */
 .btn-primary {
     display: inline-block;
     padding: 8px 20px;
@@ -108,10 +104,7 @@ button {
     background-color: var(--secondary-color);
 }
 
-/* ========================================
-   CUSTOM HERO BUTTON STYLE
-======================================== */
-/* Ghi đè style của .btn-primary nếu bạn dùng nó */
+/* CUSTOM HERO BUTTON STYLE */
 .hero-content .btn-primary {
     background-color: #0ddb00;
     color: #000000;
@@ -121,9 +114,7 @@ button {
     padding: 10px 25px;
 }
 
-/* ========================================
-   PROMO BANNER
-======================================== */
+/* PROMO BANNER */
 .promo-banner {
     background-color: var(--bg-color);
     text-align: center;
@@ -151,60 +142,54 @@ button {
     100% { transform: translateX(0); }
 }
 
-/* ========================================
-   HERO SECTION
-======================================== */
+/* HERO SECTION */
 .hero {
     position: relative;
-    height: 700px; /* Tăng chiều cao để nội dung nổi bật hơn */
+    height: 700px; 
     display: flex;
-    align-items: end; /* Căn nội dung xuống đáy */
-    justify-content: flex-start; /* Căn nội dung sang trái */
+    align-items: end; 
+    justify-content: flex-start; 
     overflow: hidden;
     background-color: #000;
 }
 
 .hero-video {
-    /* Đổi tên thành .hero-image nếu bạn dùng ảnh tĩnh */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Các thuộc tính sau vẫn giữ để ảnh/video chiếm toàn màn hình */
     object-fit: cover;
     z-index: 0;
 }
 
 .hero-content {
-    position: absolute; /* Đặt vị trí tuyệt đối so với .hero */
-    bottom: 0; /* Đặt ở dưới cùng */
-    left: 0; /* Đặt ở bên trái cùng */
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
     z-index: 1;
     text-align: left;
     color: white;
-    padding-left: 100px; /* Khoảng đệm từ lề trái */
-    padding-bottom: 80px; /* Khoảng đệm từ lề dưới */
-    max-width: 100%; /* Đảm bảo chiếm đủ chiều rộng */
+    padding-left: 100px; 
+    padding-bottom: 80px; 
+    max-width: 100%; 
 }
 
 .hero h1 {
-    font-family: 'Prosto One', sans-serif; /* Font Prosto One */
-    font-size: 80px; /* Kích thước chữ */
-    font-weight: 600; /* Font weight của Prosto One */
-    line-height: 1; /* Line height */
-    margin-bottom: 10px; /* Khoảng cách giữa chữ và nút */
+    font-family: 'Prosto One', sans-serif; 
+    font-size: 80px;
+    font-weight: 600; 
+    line-height: 1; 
+    margin-bottom: 10px; 
 }
     
-
-/* Thêm media query để chữ không quá lớn trên mobile */
 @media (max-width: 1024px) {
     .hero {
         height: 500px;
     }
     .hero-content {
-        padding-left: 20px; /* Giảm padding trên mobile */
-        padding-bottom: 20px; /* Giảm padding dưới trên mobile */
+        padding-left: 20px; 
+        padding-bottom: 20px; 
     }
     .hero h1 {
         font-size: 60px;
@@ -216,9 +201,7 @@ button {
     }
 }
 
-/* ========================================
-   SECTIONS
-======================================== */
+/* SECTIONS */
 section {
     padding: 80px 0;
 }
@@ -231,9 +214,7 @@ section h2 {
     color: var(--secondary-color);
 }
 
-/* ========================================
-   NEW ARRIVALS
-======================================== */
+/* NEW ARRIVALS */
 .new-arrivals {
     background-color: white;
 }
@@ -307,8 +288,8 @@ section h2 {
     border-radius: 25px;
     font-size: 15px;
     font-weight: bold;
-    z-index: 10; /* Tăng z-index để nó nằm trên lớp ảnh */
-    pointer-events: none; /* Để badge không chặn các sự kiện hover/click khác */
+    z-index: 10; 
+    pointer-events: none; 
 }
 
 .product-card h3 {
@@ -341,9 +322,7 @@ section h2 {
     color: var(--text-color);
 }
 
-/* ========================================
-   MATERIAL
-======================================== */
+/* MATERIAL */
 .collections-highlight {
     background-color: var(--bg-light);
     padding: 0;
@@ -411,9 +390,7 @@ section h2 {
     object-fit: cover;
     display: block;
 }
-/* ========================================
-   COLLECTIONS SLIDER
-======================================== */
+/* COLLECTIONS SLIDER */
 .collections-slider {
     background-color: white;
     overflow: hidden;
@@ -434,11 +411,10 @@ section h2 {
     height: 700px;
 }
 
-/* Thêm style cho các nút điều hướng */
 .slide-nav {
     position: absolute;
-    bottom: 20px; /* Vị trí dưới */
-    right: 20px; /* Vị trí bên phải */
+    bottom: 20px; 
+    right: 20px; 
     width: 60px;
     height: 60px;
     background: white;
@@ -463,9 +439,8 @@ section h2 {
 }
 
 .slide-nav.prev {
-    /* Nút Previous: đặt bên cạnh nút Next */
     right: 90px; 
-    opacity: 0.8; /* Làm mờ nút lùi một chút */
+    opacity: 0.8; 
 }
 
 .collection-slide {
@@ -486,7 +461,6 @@ section h2 {
 }
 
 .collection-slide.slide-out {
-    /* Class này sẽ được dùng trong JS để làm mờ slide cũ đi */
     opacity: 0;
     z-index: 4;
 }
@@ -603,9 +577,7 @@ section h2 {
         font-size: 28px;
     }
 }
-/* ========================================
-   INSTAGRAM GALLERY - CAROUSEL
-======================================== */
+/* INSTAGRAM GALLERY - CAROUSEL */
 .instagram-fullwidth {
     width: 100%;
     padding: 80px 0;
@@ -751,9 +723,7 @@ section h2 {
     }
 }
 
-/* ========================================
-   CARBON NEGATIVE SECTION
-======================================== */
+/* CARBON NEGATIVE SECTION */
 .carbon-negative {
     background-size: cover;
     background-position: center;
@@ -778,9 +748,7 @@ section h2 {
     line-height: 1.5;
     color: white;
 }
-/* ========================================
-   INFO BOXES
-======================================== */
+/* INFO BOXES */
 .info-boxes {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -836,9 +804,7 @@ section h2 {
     color: white;
 }
 
-/* ========================================
-   BLOG SECTION
-======================================== */
+/* BLOG SECTION */
 .blog-section {
     background-color: white;
 }
@@ -913,9 +879,7 @@ section h2 {
 .btn-read-more:hover {
     background-color: var(--primary-dark);
 }
-/* ========================================
-   NEWSLETTER
-======================================== */
+/* NEWSLETTER */
 .newsletter {
     background-color: white;
     color: rgb(0, 0, 0);
@@ -952,9 +916,7 @@ section h2 {
     background-color: var(--secondary-color);
 }
 
-/* ========================================
-   POPUP MODAL
-======================================== */
+/* POPUP MODAL */
 .modal {
     display: none;
     position: fixed;
@@ -1071,9 +1033,7 @@ section h2 {
     font-size: 14px;
 }
 
-/* ========================================
-   RESPONSIVE
-======================================== */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
     .hero h1 {
         font-size: 60px;
@@ -1145,3 +1105,4 @@ section h2 {
         font-size: 80px;
     }
 }
+
