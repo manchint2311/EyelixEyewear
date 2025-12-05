@@ -1,4 +1,4 @@
-/* ===================== CONTACT PAGE STYLES ===================== */
+/* CONTACT PAGE STYLES */
 .contact-section {
     display: flex;
     justify-content: center;
@@ -94,7 +94,7 @@
     }
 }
 
-/* ===================== Map Section ===================== */
+/* Map Section */
 .map-section {
     padding: 60px 20px;
     text-align: center;
@@ -123,7 +123,7 @@
 }
 
 
-/* ===================== New Arrivals Section ===================== */
+/* New Arrivals Section */
 .new-arrivals-section {
     padding: 60px 20px;
     background-color: #f9f9f9;
@@ -232,7 +232,7 @@
     }
 }
 
-/* ===================== Newsletter Section ===================== */
+/* Newsletter Section */
 .newsletter-section {
     padding: 60px 20px;
     background-color: #f9f9f9;
@@ -293,3 +293,4 @@
         width: 100%;
     }
 }
+
