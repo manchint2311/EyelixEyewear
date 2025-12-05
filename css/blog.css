@@ -19,7 +19,6 @@
     z-index: 1; 
 }
 
-/* KHU VỰC TIÊU ĐỀ BLOGS MỚI */
 .blog-title-area {
     position: relative;
     z-index: 2;
@@ -36,7 +35,7 @@
     color: white;
 }
 
-/* Blog Hero Section (Giữ lại các style không liên quan đến H1 cũ) */
+/* Blog Hero Section */
 .blog-hero {
     padding: 100px 0 60px;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -153,10 +152,6 @@
 .blog-comments {
     color: #999;
 }
-
-/* ========================================
-   BLOG POST DETAIL STYLES
-======================================== */
 
 .blog-post-hero {
     width: 100%;
@@ -670,9 +665,7 @@
     }
 }
 
-/* ========================================
-   RESPONSIVE DESIGN
-======================================== */
+/* RESPONSIVE DESIGN */
 
 @media (max-width: 1024px) {
     .blog-grid {
@@ -808,3 +801,4 @@
         text-align: center;
     }
 }
+
