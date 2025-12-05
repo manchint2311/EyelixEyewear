@@ -308,9 +308,7 @@
         .color-rose { background-color: #E8C4C4; }
         .color-gray { background-color: #808080; }
 
-/* ===================================== */
 /* SIDEBAR & PRODUCT LAYOUT STYLES */
-/* ===================================== */
 
 .product-content-wrapper {
     display: flex;
@@ -350,7 +348,7 @@
 }
 
 
-/*Style Sidebar (Accordion và Typography) */
+/*Style Sidebar */
 .filter-section-sidebar {
     border: none;
     border-bottom: 1px solid var(--border-color, #e5e5e5); 
@@ -376,7 +374,7 @@
     background: transparent;
 }
 
-/* Icon (mũi tên) */
+/* Icon */
 .filter-header .toggle-icon {
     font-size: 0.6rem; 
     color: var(--text-light); 
@@ -388,7 +386,7 @@
     transform: rotate(180deg); 
 }
 
-/* Filter Options (Text + Underline) */
+/* Filter Options */
 .filter-content {
     padding: 0.5rem 0; 
     max-height: 500px;
@@ -402,9 +400,7 @@
     padding-bottom: 0;
 }
 
-/* ===================================== */
-/* Style Color Filter Options 
-/* ===================================== */
+/* Style Color Filter Options */
 
 .filter-color-list {
     display: flex; 
@@ -473,3 +469,4 @@
 .filter-option:hover::after {
     width: 100%; 
 }
+
