@@ -1,6 +1,3 @@
-// js/search.js - Eyelix Search Functionality
-
-// Sample trending products (thay bằng data thật từ website của bạn)
 const trendingProducts = [
     { id: 1, name: 'Maison', image: 'images/products/maison.png', price: '777.000 VND' },
     { id: 2, name: 'Nuit', image: 'images/products/nuit.png', price: '790.000 VND' },
@@ -9,33 +6,29 @@ const trendingProducts = [
     { id: 5, name: 'Nova', image: 'images/products/nova.png', price: '720.000 VND' }
 ];
 
-// All products for search (thay bằng API call thật)
 const allProducts = [...trendingProducts];
 
 
 // Open Search Overlay
 function openSearch() {
-    // SỬA: Dùng đúng ID 'search-overlay' khớp với HTML
     const overlay = document.getElementById('search-overlay');
     
     if (overlay) {
-        overlay.classList.add('active'); // Kích hoạt CSS Fade-in
-        document.body.style.overflow = 'hidden'; // Chặn cuộn trang chính
+        overlay.classList.add('active'); 
+        document.body.style.overflow = 'hidden'; 
         
-        // Focus vào ô nhập liệu
         setTimeout(() => {
             const input = document.getElementById('searchInput');
             if(input) input.focus();
         }, 100);
 
-        renderTrends(); // Load dữ liệu
+        renderTrends(); 
         renderRecentlyViewed();
     } else {
         console.error("Không tìm thấy phần tử #search-overlay trong HTML");
     }
 }
     
-    // Focus vào search input sau animation
     setTimeout(() => {
         const searchInput = document.getElementById('searchInput');
         if (searchInput) {
@@ -49,7 +42,7 @@ function closeSearch() {
     const overlay = document.getElementById('search-overlay');
     if (overlay) {
         overlay.classList.remove('active');
-        document.body.style.overflow = ''; // Cho phép cuộn lại
+        document.body.style.overflow = ''; 
     }
 }
     
@@ -72,7 +65,6 @@ function renderTrends() {
     const grid = document.querySelector('.trends-grid');
     if (!grid) return;
     
-    // Nếu chưa có nội dung thì mới render
     if (grid.innerHTML.trim() === '') {
         grid.innerHTML = trendingProducts.map(item => `
             <div class="trend-item" style="cursor: pointer; text-align: center;">
@@ -85,13 +77,9 @@ function renderTrends() {
 
 // Render Recently Viewed
 function renderRecentlyViewed() {
-    // Logic tương tự renderTrends, bạn có thể copy lại từ code cũ nếu cần
-    // Hiện tại để trống để tránh lỗi nếu chưa có localStorage
 }
 
-// Khởi tạo sự kiện khi trang load xong
 document.addEventListener('DOMContentLoaded', () => {
-    // Sự kiện đóng khi bấm nút ESC
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeSearch();
     });
@@ -209,4 +197,5 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initSearch);
 } else {
     initSearch();
+
 }
