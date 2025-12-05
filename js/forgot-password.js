@@ -1,7 +1,4 @@
-// ========================================
 // Forgot Password Page JavaScript
-// ========================================
-
 document.addEventListener('DOMContentLoaded', function() {
     // Form Elements
     const forgotForm = document.getElementById('forgotForm');
@@ -183,10 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function sendResetLink(identifier) {
         return new Promise((resolve, reject) => {
             // Simulate network delay
-            setTimeout(() => {
-                // Demo: Accept any valid identifier
-                // In production, this would be a real API call to check if account exists
-                
+            setTimeout(() => {                
                 const validation = validateIdentifier(identifier);
                 
                 if (validation.valid) {
@@ -206,7 +200,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle browser back button
     window.addEventListener('pageshow', function(event) {
         if (event.persisted) {
-            // Page was loaded from cache
             setLoadingState(false);
             hideMessage();
         }
@@ -235,4 +228,5 @@ if (typeof module !== 'undefined' && module.exports) {
         isValidPhone,
         isValidUsername
     };
+
 }
