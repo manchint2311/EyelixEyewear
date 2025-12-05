@@ -4,93 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart - Eyelix</title>
+
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/cart.css">
-    <link rel="icon" href="images/logo/favicon.png" sizes="32x32">
 </head>
+
 <body>
-    <header id="header"></header>
+<header id="header"></header>
 
-    <!-- CART CONTENT -->
-    <main class="cart-page">
-        <div class="cart-layout">
-            
-            <h1 class="cart-title">Cart</h1>
+<main class="cart-page">
+    <div class="cart-layout">
 
-            <div class="cart-alert">
-                <span class="star-icon">⭐</span>
-                Complete your order and earn 660,000 Eyelix points & rewards for a discount on a future purchase
-            </div>
+        <!-- TITLE -->
+        <h1 class="cart-title">Cart</h1>
 
-            <div class="cart-grid">
-                
-                <section class="cart-left">
-                    <!-- Table Header -->
-                    <div class="cart-table-header">
-                        <span>Product</span>
-                        <span>Quantity</span>
-                        <span>Subtotal</span>
-                        <span></span> 
-                    </div>
-
-                    <!-- CART ITEMS -->
-                    <div id="cart-items"></div>
-
-                    <!-- UPDATE BUTTON -->
-                    <div class="cart-actions">
-                        <button id="update-cart" class="btn-update-cart">Update cart</button>
-                    </div>
-                </section>
-
-                <aside class="cart-summary">
-                    <h2>Cart totals</h2>
-                    <div class="summary-row">
-                        <span>Subtotal</span>
-                        <span id="summary-subtotal">0 VND</span>
-                    </div>
-
-                    <div class="summary-row shipping-label">
-                        Shipping
-                    </div>
-
-                    <div class="shipping-methods">
-                        <label>
-                            <input type="radio" name="shipping" value="express" checked>
-                            Express Delivery: 20.000 VND
-                        </label>
-
-                        <label>
-                            <input type="radio" name="shipping" value="instant">
-                            Instant Delivery: 50.000 VND
-                        </label>
-
-                        <a href="#" class="change-address">Change address</a>
-                    </div>
-
-                    <div class="summary-row total-row">
-                        <span>Total</span>
-                        <span id="summary-total">0 VND</span>
-                    </div>
-
-                    <p class="vat-info">(includes VAT where applicable)</p>
-
-                    <button id="btn-checkout" class="btn-checkout">
-                        Proceed to checkout
-                    </button>
-                </aside>
-            </div> 
+        <!-- ALERT -->
+        <div class="cart-alert">
+            <span class="star-icon">⭐</span>
+            Complete your order and earn 660,000 Eyelix points & rewards for a discount on a future purchase
         </div>
-    </main>
 
-    <footer id="footer"></footer>
+        <!-- GRID LAYOUT -->
+        <div class="cart-grid">
 
-    <script src="js/header.js"></script>
-    <script src="js/footer.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/cart.js"></script>
+            <!-- LEFT SIDE CART LIST -->
+            <section class="cart-left">
+
+                <!-- Table Header -->
+                <div class="cart-table-header">
+                    <span>Product</span>
+                    <span>Quantity</span>
+                    <span>Subtotal</span>
+                    <span></span>
+                </div>
+
+                <!-- CART ITEMS RENDER HERE -->
+                <div id="cart-items"></div>
+
+                <!-- UPDATE BUTTON -->
+                <div class="cart-actions">
+                    <button id="update-cart" class="btn-update-cart">Update cart</button>
+                </div>
+
+            </section>
+
+            <!-- RIGHT SIDE SUMMARY -->
+            <aside id="cart-summary" class="cart-summary">
+
+                <h2>Cart totals</h2>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="summary-subtotal">0 VND</span>
+                </div>
+
+                <div class="summary-row shipping-label">Shipping</div>
+
+                <div class="shipping-methods">
+                    <label>
+                        <input type="radio" name="shipping" value="express" checked>
+                        Express Delivery: 20.000 VND
+                    </label>
+
+                    <label>
+                        <input type="radio" name="shipping" value="instant">
+                        Instant Delivery: 50.000 VND
+                    </label>
+
+                    <a href="#" class="change-address">Change address</a>
+                </div>
+
+                <div class="summary-row total-row">
+                    <span>Total</span>
+                    <span id="summary-total">0 VND</span>
+                </div>
+
+                <p class="vat-info">(includes VAT where applicable)</p>
+
+                <button id="btn-checkout" class="btn-checkout">
+                    Proceed to checkout
+                </button>
+
+            </aside>
+
+        </div>
+    </div>
+</main>
+
+<footer id="footer"></footer>
+
+<script src="js/header.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+
 </body>
 </html>
-
-
