@@ -22,10 +22,10 @@ const footerHTML = `
             <div class="footer-col">
                 <h5>Help</h5>
                 <ul>
-                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
                     <li><a href="terms.html">Terms & Conditions</a></li>
                     <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
                 </ul>
             </div>
 
@@ -109,4 +109,5 @@ if (document.readyState === 'loading') {
 } else {
     initFooter();
 }
+
 
