@@ -23,10 +23,10 @@
 }
 .cart-title {
     font-size: 32px;
-    font-weight: 800; 
+    font-weight: 700; 
     color: #000;
     margin-bottom: 25px;
-    text-transform: uppercase; 
+    text-transform: none; 
     letter-spacing: 0.5px;
     text-align: left;
 }
@@ -168,12 +168,20 @@
 }
 
 .btn-update-cart {
-    padding: 12px 30px;
-    background: #000;
-    color: #fff;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 600;
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #000000;
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-update-cart:hover {
+    transform: translateY(-2px);
 }
 
 /* RIGHT SUMMARY BOX */
@@ -187,9 +195,9 @@
 
 .cart-summary h2 {
     font-size: 18px; 
-    font-weight: 800; 
+    font-weight: 700; 
     margin-bottom: 18px;
-    text-transform: uppercase; 
+    text-transform: none; 
     color: #000;
     letter-spacing: 0.5px;
     margin-top: 0; 
@@ -232,11 +240,19 @@
 /* Checkout Buttons */
 .btn-checkout {
     width: 100%;
-    padding: 13px;
-    background: #E53935;
+    padding: 12px 20px;
+    background-color: #ff6f3c;
     color: white;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 700; 
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn-checkout:hover {
+    background-color: #e65b2e;
+    transform: translateY(-2px);
 }
 
