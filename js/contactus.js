@@ -30,13 +30,12 @@ if (contactForm) {
 const addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
 const addToWishlistButtons = document.querySelectorAll('.btn-add-to-wishlist');
 
-// Thêm sản phẩm vào giỏ hàng (localStorage)
 function addToCart(product) {
     let cart = JSON.parse(localStorage.getItem("eyelixCart")) || [];
     const existingProduct = cart.find(item => item.name === product.name);
     
     if (existingProduct) {
-        existingProduct.qty += 1;  // Tăng số lượng nếu đã có trong giỏ
+        existingProduct.qty += 1;  
     } else {
         cart.push({
             name: product.name,
@@ -49,4 +48,5 @@ function addToCart(product) {
     localStorage.setItem("eyelixCart", JSON.stringify(cart));
     alert(`"${product.name}" has been added to your cart!`);
 }
+
 
