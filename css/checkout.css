@@ -291,7 +291,7 @@ input[type="radio"] {
 .btn-place-order {
     width: 100%;
     padding: 12px 20px;
-    background-color: #ff6f3c;
+    background-color: black;
     color: white;
     border-radius: 10px;
     font-size: 15px;
@@ -302,7 +302,7 @@ input[type="radio"] {
 }
 
 .btn-place-order:hover {
-    background-color: #e65b2e;
+    background-color: var(--primary-dark);
     transform: translateY(-2px);
 }
 
@@ -330,3 +330,4 @@ input[type="radio"] {
 .cart-alert {
     border-radius: 6px;
 }
+
