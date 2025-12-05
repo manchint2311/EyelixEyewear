@@ -462,7 +462,7 @@
         /* Stock Info */
         .stock-info {
             font-size: 16px;
-            color: #008000; /* Màu xanh lá cây cho 'in stock' */
+            color: #008000; 
             font-weight: 600;
             margin-bottom: 30px;
         }
@@ -470,7 +470,7 @@
         /* Add to Wishlist Link */
         .add-to-wishlist-link {
             font-size: 14px;
-            margin-top: -10px; /* Di chuyển lên gần nút mua */
+            margin-top: -10px; 
         }
 
         .add-to-wishlist-link i {
@@ -492,3 +492,4 @@
         .add-to-wishlist-link:hover i {
             color: #e00d0d;
         }
+
