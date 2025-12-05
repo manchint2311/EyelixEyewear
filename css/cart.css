@@ -176,9 +176,7 @@
     font-weight: 600;
 }
 
-/* ==============================
-   RIGHT SUMMARY BOX
-============================== */
+/* RIGHT SUMMARY BOX */
 .cart-summary {
     background: #fafafa;
     padding: 20px 28px; 
@@ -241,3 +239,4 @@
     font-size: 16px;
     font-weight: 700; 
 }
+
