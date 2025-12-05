@@ -2,9 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ============================================
     // SOCIAL SHARE FUNCTIONALITY
-    // ============================================
     const socialShareButtons = document.querySelectorAll('.share-btn');
     
     socialShareButtons.forEach(button => {
@@ -27,9 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ============================================
     // COMMENT FORM HANDLING
-    // ============================================
     const commentForm = document.querySelector('.comment-form');
     
     if (commentForm) {
@@ -89,9 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
         loadSavedCommentInfo();
     }
     
-    // ============================================
     // COMMENT REPLY FUNCTIONALITY
-    // ============================================
     const replyButtons = document.querySelectorAll('.comment-reply');
     
     replyButtons.forEach(button => {
@@ -110,9 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // ============================================
     // SMOOTH SCROLL FOR ANCHOR LINKS
-    // ============================================
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     
     anchorLinks.forEach(link => {
@@ -130,21 +122,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // ============================================
     // READ PROGRESS BAR
-    // ============================================
     createReadProgressBar();
     
-    // ============================================
     // IMAGE LAZY LOADING
-    // ============================================
     lazyLoadImages();
     
 });
 
-// ============================================
 // HELPER FUNCTIONS
-// ============================================
 
 // Create comment element
 function createCommentElement(name, commentText) {
@@ -296,4 +282,5 @@ style.textContent = `
         }
     }
 `;
+
 document.head.appendChild(style);
