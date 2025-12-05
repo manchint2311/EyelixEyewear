@@ -1,6 +1,4 @@
-// ========================================
 // POPUP MODAL
-// ========================================
 document.addEventListener('DOMContentLoaded', function() {
     const popup = document.getElementById('popup-modal');
     const closeBtn = document.querySelector('.close-modal');
@@ -27,9 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// ========================================
 // MOBILE MENU
-// ========================================
 const menuToggle = document.createElement('button');
 menuToggle.className = 'mobile-menu-toggle';
 menuToggle.innerHTML = '☰';
@@ -66,9 +62,7 @@ function checkScreenSize() {
 window.addEventListener('resize', checkScreenSize);
 checkScreenSize();
 
-// ========================================
 // DROPDOWN MENU
-// ========================================
 const dropdowns = document.querySelectorAll('.dropdown');
 
 dropdowns.forEach(dropdown => {
@@ -82,9 +76,7 @@ dropdowns.forEach(dropdown => {
     });
 });
 
-// ========================================
 // SMOOTH SCROLL
-// ========================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -98,10 +90,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ========================================
 // STICKY HEADER
-// ========================================
-let lastScroll = 0;
+ let lastScroll = 0;
 const header = document.getElementById('header');
 
 window.addEventListener('scroll', () => {
@@ -116,9 +106,7 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// ========================================
 // PRODUCT SLIDER
-// ========================================
 function initProductSlider() {
     const sliders = document.querySelectorAll('.product-slider');
     
@@ -156,9 +144,7 @@ function initProductSlider() {
 
 initProductSlider();
 
-// ========================================
 // WISHLIST FUNCTIONALITY
-// ========================================
 let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
 function updateWishlistUI() {
@@ -197,9 +183,7 @@ document.addEventListener('click', function(e) {
 
 updateWishlistUI();
 
-// ========================================
 // NOTIFICATION
-// ========================================
 function showNotification(message) {
     const notification = document.createElement('div');
     notification.className = 'notification';
@@ -251,9 +235,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// ========================================
 // LAZY LOADING IMAGES
-// ========================================
 const images = document.querySelectorAll('img[data-src]');
 
 const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -269,9 +251,7 @@ const imageObserver = new IntersectionObserver((entries, observer) => {
 
 images.forEach(img => imageObserver.observe(img));
 
-// ========================================
 // FORM VALIDATION
-// ========================================
 const forms = document.querySelectorAll('form');
 
 forms.forEach(form => {
@@ -298,9 +278,7 @@ function validateEmail(email) {
     return re.test(email);
 }
 
-// ========================================
 // SCROLL REVEAL ANIMATION
-// ========================================
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -324,9 +302,7 @@ animateElements.forEach(el => {
     observer.observe(el);
 });
 
-// ========================================
 // BACK TO TOP BUTTON
-// ========================================
 const backToTop = document.createElement('button');
 backToTop.className = 'back-to-top';
 backToTop.innerHTML = '↑';
@@ -367,9 +343,7 @@ backToTop.addEventListener('click', () => {
     });
 });
 
-// ========================================
 // COLLECTIONS CAROUSEL AUTO PLAY
-// ========================================
 function initCollectionsCarousel() {
     const carousel = document.querySelector('.collections-carousel');
     if (!carousel) return;
@@ -393,9 +367,7 @@ function initCollectionsCarousel() {
 }
 
 initCollectionsCarousel();
-// ========================================
 // COLLECTIONS CAROUSEL WITH NAVIGATION & FADE
-// ========================================
 function initCollectionsCarousel() {
     const carousel = document.querySelector('.collections-carousel');
     if (!carousel) return;
@@ -403,9 +375,8 @@ function initCollectionsCarousel() {
     const slides = carousel.querySelectorAll('.collection-slide');
     let currentSlide = 0;
     let autoPlayInterval;
-    const transitionDuration = 400; // 0.4s - khớp với transition trong CSS
+    const transitionDuration = 400; 
 
-    // Tạo nút điều hướng (giữ nguyên icon)
     const prevArrow = document.createElement('button');
     prevArrow.className = 'slide-nav prev';
     prevArrow.innerHTML = '<i class="fas fa-angle-left"></i>'; 
@@ -418,26 +389,20 @@ function initCollectionsCarousel() {
     carousel.appendChild(nextArrow);
 
     function showSlide(index) {
-        // Bắt đầu hiển thị slide mới ngay lập tức
         slides[index].style.display = 'flex';
         
-        // Vòng lặp để xử lý slide cũ
         slides.forEach((slide, i) => {
             if (i === index) {
-                // Slide mới: thêm active để opacity: 1 (Fade In)
                 setTimeout(() => {
                     slide.classList.add('active');
-                }, 10); // Thêm độ trễ nhỏ để transition hoạt động
+                }, 10); 
             } else if (slide.classList.contains('active')) {
-                // Slide cũ: xóa active để opacity: 0 (Fade Out)
                 slide.classList.remove('active');
                 
-                // Sau khi transition (mờ) kết thúc, ẩn hoàn toàn slide cũ
                 setTimeout(() => {
                     slide.style.display = 'none';
                 }, transitionDuration); 
             } else {
-                // Đảm bảo các slide khác luôn ẩn
                 slide.style.display = 'none';
                 slide.classList.remove('active');
             }
@@ -476,7 +441,7 @@ function initCollectionsCarousel() {
     }
 
     // Initialize
-    slides.forEach(slide => slide.style.transition = `opacity ${transitionDuration/1000}s ease-in-out`); // Gán transition style
+    slides.forEach(slide => slide.style.transition = `opacity ${transitionDuration/1000}s ease-in-out`); 
     showSlide(0);
     startAutoPlay();
 
@@ -492,9 +457,7 @@ function initCollectionsCarousel() {
 
 initCollectionsCarousel();
 
-// ========================================
 // INSTAGRAM GRID LIGHTBOX
-// ========================================
 const instagramImages = document.querySelectorAll('.instagram-grid img');
 
 instagramImages.forEach(img => {
@@ -535,3 +498,4 @@ instagramImages.forEach(img => {
 });
 
 console.log('Eyelix Eyewear - Website loaded successfully!');
+
