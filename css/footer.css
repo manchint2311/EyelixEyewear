@@ -1,6 +1,4 @@
-/* ========================================
-   FOOTER STYLES
-======================================== */
+/* FOOTER STYLES */
 
 #footer {
     background-color: #ffffff;
@@ -115,9 +113,7 @@
     margin: 0;
 }
 
-/* ========================================
-   RESPONSIVE DESIGN
-======================================== */
+/* RESPONSIVE DESIGN */
 
 @media (max-width: 1200px) {
     .footer-main .container {
@@ -198,4 +194,5 @@
 
 .social-icon:hover svg {
     transform: scale(1.1);
+
 }
