@@ -1,6 +1,6 @@
 .blog-page-banner {
     width: 100%;
-    height: 300px;
+    height: 500px;
     position: relative;
     overflow: hidden;
     margin-bottom: 3rem;
@@ -10,7 +10,7 @@
 }
 
 .blog-banner-image {
-     width: 100%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
     position: absolute;
@@ -22,7 +22,6 @@
 .blog-title-area {
     position: relative;
     z-index: 2;
-    text-align: center;
     color: white;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
     padding: 0 2rem; 
@@ -35,7 +34,7 @@
     color: white;
 }
 
-/* Blog Hero Section */
+/* Blog Hero Section (Giữ lại các style không liên quan đến H1 cũ) */
 .blog-hero {
     padding: 100px 0 60px;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -45,29 +44,6 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-.breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    font-size: 14px;
-    color: #666;
-}
-
-.breadcrumb a {
-    color: #666;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.breadcrumb a:hover {
-    color: #0DDB00;
-}
-
-.breadcrumb span {
-    color: #999;
 }
 
 /* Blog Grid Section */
@@ -114,13 +90,13 @@
 }
 
 .blog-grid-content h2 a {
-    color: #1a1a1a;
+    color: var(--text-dark);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .blog-grid-content h2 a:hover {
-    color: #0DDB00;
+    color:var(--primary-color);
 }
 
 .blog-grid-content > p {
@@ -152,6 +128,10 @@
 .blog-comments {
     color: #999;
 }
+
+/* ========================================
+   BLOG POST DETAIL STYLES
+======================================== */
 
 .blog-post-hero {
     width: 100%;
@@ -200,55 +180,13 @@
     gap: 20px;
 }
 
-.author-info {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.author-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.author-name {
-    display: block;
-    font-weight: 600;
-    color: #1a1a1a;
-    font-size: 15px;
-}
-
-.post-date {
-    display: block;
-    font-size: 13px;
-    color: #999;
-    margin-top: 3px;
-}
-
-.post-category {
-    padding: 8px 20px;
-    background: #0DDB00;
-    color: #fff;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    border-radius: 20px;
-}
-
 /* Social Share */
 .social-share {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-top: 25px;
+    margin-top: 15px;
     flex-wrap: wrap;
-}
-
-.social-share span {
-    font-weight: 600;
-    color: #666;
 }
 
 .share-btn {
@@ -266,15 +204,7 @@
 
 .share-btn:hover {
     transform: translateY(-3px);
-}
-
-.share-btn.facebook:hover {
-    background: #1877f2;
-    color: #fff;
-}
-
-.share-btn.twitter:hover {
-    background: #1da1f2;
+    background: var(--text-dark);
     color: #fff;
 }
 
@@ -372,7 +302,7 @@
 }
 
 .tag:hover {
-    background: #0DDB00;
+    background: var(--text-dark);
     color: #fff;
 }
 
@@ -395,14 +325,6 @@
     background: #f9f9f9;
     border-radius: 12px;
     margin-bottom: 20px;
-}
-
-.comment-avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
 }
 
 .comment-content {
@@ -434,7 +356,7 @@
 }
 
 .comment-reply {
-    color: #0DDB00;
+    color: var(--text-dark);
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
@@ -442,7 +364,7 @@
 }
 
 .comment-reply:hover {
-    color: #0DDB00;
+    color: var(--primary-dark);
 }
 
 /* Comment Form */
@@ -453,7 +375,7 @@
 .comment-form-section h3 {
     font-size: 28px;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     color: #1a1a1a;
 }
 
@@ -484,7 +406,6 @@
 .comment-form input:focus,
 .comment-form textarea:focus {
     outline: none;
-    border-color: #0DDB00;
 }
 
 .comment-form textarea {
@@ -495,7 +416,7 @@
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 10px;
 }
 
 .form-group.checkbox {
@@ -518,11 +439,9 @@
 
 .btn-primary {
     display: inline-block;
-    padding: 14px 32px;
-    background: #2c5f2d;
+    padding: 10px 28px;
+    background: var(--text-dark);
     color: #fff;
-    text-decoration: none;
-    border: none;
     border-radius: 8px;
     font-size: 15px;
     font-weight: 600;
@@ -533,7 +452,7 @@
 }
 
 .btn-primary:hover {
-    background: #0DDB00;
+    background: var(--primary-dark);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(44, 95, 45, 0.3);
 }
@@ -665,7 +584,9 @@
     }
 }
 
-/* RESPONSIVE DESIGN */
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
 
 @media (max-width: 1024px) {
     .blog-grid {
