@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/checkout.css">
-    <link rel="icon" href="images/logo/favicon.png" sizes="32x32">
     
     <!-- Favicon -->
     <link rel="icon" href="images/logo/favicon.png" sizes="32x32">
@@ -19,6 +18,18 @@
 
 <body>
     <header id="header"></header>
+    <div class="checkout-title-wrapper">
+    <h1 class="checkout-title">Checkout</h1>
+    </div>
+
+    <!-- ALERT -->
+        <div class="cart-alert-wrapper">
+    <div class="cart-alert">
+        <span class="star-icon">⭐</span>
+        Complete your order and earn 660,000 Eyelix points & rewards for a discount on a future purchase
+    </div>
+</div>
+
 
     <!-- CHECKOUT CONTENT -->
     <main class="checkout-page">
@@ -183,7 +194,10 @@
                                         <input type="radio" name="payment" value="credit">
                                         <span>Credit / Debit Card</span>
                                     </label>
-                                    <span class="card-icon">💳</span>
+                                    <span class="card-icon">
+                                        <img src="images/logo/credit-card-icon.svg" alt="credit card icon">
+                                    </span>
+
                                 </div>
                             </div>
                         </div>
@@ -205,5 +219,4 @@
 </body>
 
 </html>
-
 
