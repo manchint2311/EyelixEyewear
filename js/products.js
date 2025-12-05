@@ -223,7 +223,7 @@
                                 ${formatPrice(product.price)}
                             </div>
                             <div class="product-actions">
-                                <button class="btn-add-cart" onclick="addToCart(${product.id}, '${product.title}', ${product.price})">
+                                <button class="btn-add-cart" onclick="addToCart(${product.id})">
                                     Add to cart
                                 </button>
                                 <button class="btn-wishlist" onclick="toggleWishlist(this)">♡</button>
@@ -255,18 +255,32 @@
         });
 
         // Add to cart
-        function addToCart(id, title, price) {
-            cart.push({ id, title, price });
-            localStorage.setItem('cart', JSON.stringify(cart));
-            localStorage.setItem('cartCount', cart.length);
-            
-            // Update cart count in header
-            if (window.updateCartCount) {
-                window.updateCartCount();
-            }
-            
-            alert(`${title} added to cart!`);
-        }
+        function addToCart(id) {
+    const product = products.find(p => p.id === id);
+    if (!product) return;
+
+    const cartItem = {
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        image: product.image,   // ⭐ NOW IMAGE IS STORED
+        quantity: 1
+    };
+
+    let existing = cart.find(i => i.id === cartItem.id);
+    if (existing) {
+        existing.quantity += 1;
+    } else {
+        cart.push(cartItem);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    if (window.updateCartCount) window.updateCartCount();
+
+    alert(`${product.title} added to cart!`);
+}
+
 
         // Wishlist toggle
         function toggleWishlist(btn) {
@@ -303,5 +317,4 @@
                 }
             });
         });
-
 
