@@ -1,6 +1,4 @@
-/* ===================
-   WISHLIST PAGE STYLES
-==================== */
+/* WISHLIST PAGE STYLES */
 
 .wishlist-page {
     padding: 60px 20px;
@@ -32,7 +30,7 @@
     text-align: left !important;
 }
 
-/* --- TABLE STYLES --- */
+/* TABLE STYLES */
 .wishlist-container {
     overflow-x: auto; 
     margin-bottom: 20px;
@@ -48,7 +46,6 @@
     background-color: #f9f9f9;
     padding: 15px 10px;
     
-    /* Căn trái tiêu đề bảng */
     text-align: left !important;
     
     font-size: 14px;
@@ -64,10 +61,9 @@
     border-bottom: 1px solid #eee;
     color: #333;
     font-size: 14px;
-    text-align: left; /* Căn trái nội dung bảng */
+    text-align: left; 
 }
 
-/* Các cột cụ thể */
 .wishlist-table .remove-btn {
     background: none;
     border: none;
@@ -117,7 +113,7 @@
     background-color: #d32f2f;
 }
 
-/* --- FOOTER ACTION BAR --- */
+/* FOOTER ACTION BAR */
 .wishlist-footer {
     display: flex;
     justify-content: space-between;
@@ -163,7 +159,7 @@
     background-color: #d32f2f;
 }
 
-/* --- SOCIAL SHARE --- */
+/* SOCIAL SHARE */
 .wishlist-share {
     margin-top: 40px;
     text-align: right;
@@ -206,4 +202,5 @@
     .btn-red {
         width: 100%;
     }
+
 }
