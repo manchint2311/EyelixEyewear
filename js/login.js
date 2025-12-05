@@ -1,7 +1,5 @@
-// Login Page JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Form Elements
     const loginForm = document.getElementById('loginForm');
     const usernameInput = document.getElementById('username');
     const passwordInput = document.getElementById('password');
@@ -17,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize
     init();
-
     function init() {
         setupEventListeners();
         startShowcaseSlideshow();
@@ -149,14 +146,14 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (response.success) {
                 // Success
-                showMessage('Login successful! Redirecting...', 'success');
+                showMessage('Login successful! Redirecting to account...', 'success');
                 
                 // Store user data (in production, use secure storage)
                 sessionStorage.setItem('user', JSON.stringify(response.user));
                 
-                // Redirect after delay
+                // CHỈNH SỬA Ở ĐÂY: Chuyển hướng đến account.html
                 setTimeout(() => {
-                    window.location.href = 'index.html';
+                    window.location.href = 'account.html'; 
                 }, 1000);
             } else {
                 throw new Error(response.message || 'Login failed');
@@ -185,37 +182,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Login User (API Call Simulation)
+    // Login User (API Call Simulation) 
     function loginUser(username, password) {
         return new Promise((resolve, reject) => {
             // Simulate network delay
             setTimeout(() => {
-                if (username === 'demo' && password === 'demo123') {
-                    resolve({
-                        success: true,
-                        user: {
-                            id: 1,
-                            username: username,
-                            email: 'demo@eyelix.com',
-                            fullName: 'Demo User'
-                        }
-                    });
-                } else if (username && password) {
-                    // Accept any other credentials for demo
-                    resolve({
-                        success: true,
-                        user: {
-                            id: Math.floor(Math.random() * 1000),
-                            username: username,
-                            email: `${username}@example.com`,
-                            fullName: username
-                        }
-                    });
+            // Tesing lệnh đăng nhập -> Login
+            if (username && password) {
+                 resolve({
+                success: true,
+                user: {
+                    id: Math.floor(Math.random() * 1000),
+                    username: username,
+                    email: `${username}@example.com`,
+                    fullName: username
+                }
+            });
+
                 } else {
                     reject(new Error('Sorry, your password was incorrect. Please double-check your password.'));
                 }
             }, 1500);
         });
+
+        
     }
 
     // Handle Facebook Login
@@ -278,3 +268,4 @@ if (typeof module !== 'undefined' && module.exports) {
     };
 
 }
+
