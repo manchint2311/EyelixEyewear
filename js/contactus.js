@@ -26,27 +26,5 @@ if (contactForm) {
     });
 }
 
-// DOM Elements
-const addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
-const addToWishlistButtons = document.querySelectorAll('.btn-add-to-wishlist');
-
-function addToCart(product) {
-    let cart = JSON.parse(localStorage.getItem("eyelixCart")) || [];
-    const existingProduct = cart.find(item => item.name === product.name);
-    
-    if (existingProduct) {
-        existingProduct.qty += 1;  
-    } else {
-        cart.push({
-            name: product.name,
-            price: product.price,
-            qty: 1,
-            image: product.image
-        });
-    }
-
-    localStorage.setItem("eyelixCart", JSON.stringify(cart));
-    alert(`"${product.name}" has been added to your cart!`);
-}
 
 
