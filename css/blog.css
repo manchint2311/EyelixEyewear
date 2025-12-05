@@ -30,7 +30,7 @@
 }
 
 .breadcrumb a:hover {
-    color: #2c5f2d;
+    color: #0DDB00;
 }
 
 .breadcrumb span {
@@ -94,7 +94,7 @@
 }
 
 .blog-grid-content h2 a:hover {
-    color: #2c5f2d;
+    color: #0DDB00;
 }
 
 .blog-grid-content > p {
@@ -207,7 +207,7 @@
 
 .post-category {
     padding: 8px 20px;
-    background: #2c5f2d;
+    background: #0DDB00;
     color: #fff;
     font-size: 12px;
     font-weight: 600;
@@ -350,7 +350,7 @@
 }
 
 .tag:hover {
-    background: #2c5f2d;
+    background: #0DDB00;
     color: #fff;
 }
 
@@ -412,7 +412,7 @@
 }
 
 .comment-reply {
-    color: #2c5f2d;
+    color: #0DDB00;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
@@ -420,7 +420,7 @@
 }
 
 .comment-reply:hover {
-    color: #1a4d1b;
+    color: #0DDB00;
 }
 
 /* Comment Form */
@@ -462,7 +462,7 @@
 .comment-form input:focus,
 .comment-form textarea:focus {
     outline: none;
-    border-color: #2c5f2d;
+    border-color: #0DDB00;
 }
 
 .comment-form textarea {
@@ -511,7 +511,7 @@
 }
 
 .btn-primary:hover {
-    background: #1a4d1b;
+    background: #0DDB00;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(44, 95, 45, 0.3);
 }
@@ -575,7 +575,7 @@
 }
 
 .related-card:hover h4 {
-    color: #2c5f2d;
+    color: #0DDB00;
 }
 
 .related-date {
