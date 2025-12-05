@@ -1,8 +1,42 @@
-/* ========================================
-   BLOG PAGE STYLES
-======================================== */
+.blog-page-banner {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
 
-/* Blog Hero Section */
+.blog-banner-image {
+     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; 
+}
+
+/* KHU VỰC TIÊU ĐỀ BLOGS MỚI */
+.blog-title-area {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    padding: 0 2rem; 
+}
+
+.blog-title-area h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+/* Blog Hero Section (Giữ lại các style không liên quan đến H1 cũ) */
 .blog-hero {
     padding: 100px 0 60px;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -35,13 +69,6 @@
 
 .breadcrumb span {
     color: #999;
-}
-
-.blog-hero h1 {
-    font-size: 48px;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin: 0;
 }
 
 /* Blog Grid Section */
@@ -655,6 +682,14 @@
 }
 
 @media (max-width: 768px) {
+    .blog-page-banner {
+        height: 250px;
+    }
+
+    .blog-title-area h1 {
+        font-size: 32px;
+    }
+
     .blog-hero {
         padding: 80px 0 40px;
     }
@@ -745,6 +780,10 @@
 
 @media (max-width: 480px) {
     .blog-hero h1 {
+        font-size: 28px;
+    }
+    
+    .blog-title-area h1 {
         font-size: 28px;
     }
 
