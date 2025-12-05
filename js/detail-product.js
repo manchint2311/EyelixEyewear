@@ -12,24 +12,19 @@
 
         // Color Selection
         function selectColor(element, newImageSrc) {
-            // Xóa active class khỏi các lựa chọn màu khác
             document.querySelectorAll('.color-option').forEach(color => {
                 color.classList.remove('active');
             });
-            // Đặt active class cho lựa chọn hiện tại
             element.classList.add('active');
 
-            // Cập nhật ảnh chính
             if (newImageSrc) {
                 document.getElementById('mainImage').src = newImageSrc;
             }
             
-            // Cập nhật thumbnail (tùy chọn: bỏ active ở thumbnail)
             document.querySelectorAll('.thumbnail').forEach(thumb => {
                 thumb.classList.remove('active');
             });
             
-            // Tự động kích hoạt thumbnail đầu tiên khi chuyển về màu Black (tùy chọn)
             if (element.classList.contains('color-black')) {
                 document.querySelector('.thumbnail').classList.add('active');
             }
