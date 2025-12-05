@@ -1,6 +1,3 @@
-// ============ HEADER COMPONENT ============
-// File: js/header.js
-// Usage: <header id="header"></header> + <script src="js/header.js"></script>
 
 const headerHTML = `
 
@@ -49,7 +46,7 @@ const headerHTML = `
                     </svg>
                 </button>
                 
-                <a href="account.html" class="icon-btn account-btn" aria-label="Account">
+                <a href="login.html" class="icon-btn account-btn" aria-label="Account">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                         <circle cx="12" cy="7" r="4"/>
